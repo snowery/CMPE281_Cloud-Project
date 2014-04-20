@@ -47,3 +47,4 @@ class Host:
             if status.split('(')[0][:-1] == 'powered off':
                 instances.append(vm_name)
         return instances
+
