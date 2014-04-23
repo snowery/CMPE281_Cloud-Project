@@ -7,10 +7,11 @@ from billing import Billing
 
 
 class Controller:
-    def __init__(self, user, db):
+    def __init__(self, user, pwd, db):
         self.user_name = user
         self.db_name = db
-        self.db = MySQLdb.connect(user=user, db=db)
+        self.password = pwd
+        self.db = MySQLdb.connect(user=user, passwd=pwd, db=db)
         self.c = self.db.cursor(cursors.DictCursor)
 
     def add_instances(self, host):
@@ -89,7 +90,7 @@ class Controller:
             self.poweroff_instance(vm_id)
         self.c.execute("select OrderId from orders where VmId = %s and VmStatus = 'S'", vm_id)
         order_id = int(self.c.fetchone()['OrderId'])
-        Billing(self.user_name, self.db_name).generate_report_by_id(order_id)
+        Billing(self.user_name, self.password, self.db_name).generate_report_by_id(order_id)
 
         self.c.execute("update orders set VmStatus = 'T' where OrderId = %s", order_id)
         self.c.execute("update instance set ReservedBy = null where VmId = %s", vm_id)

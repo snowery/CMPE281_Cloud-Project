@@ -5,8 +5,8 @@ import datetime
 
 
 class Billing():
-    def __init__(self, user, db):
-        self.db = MySQLdb.connect(user=user, db=db)
+    def __init__(self, user, pwd, db):
+        self.db = MySQLdb.connect(user=user, passwd=pwd, db=db)
         self.c = self.db.cursor(cursors.DictCursor)
 
     def get_orders(self, user_id):
@@ -28,7 +28,7 @@ class Billing():
             report.append(bill)
             total += bill["fee"]
 
-        report.append({'total': total})
+        report.append({'total pending': total})
         return report
 
     def calc_bill_by_id(self, order_id):
@@ -43,7 +43,7 @@ class Billing():
             uptime += (now - order['LastStartTime']).seconds
 
         if order['RatePlan'] == 0: # on-demand
-            fee = float(order['UnitPrice']) * uptime / 60
+            fee = round(float(order['UnitPrice']) * uptime / 60, 2)
         elif order['RatePlan'] == 1: # flat rate
             fee = float(order['UnitPrice'])
 

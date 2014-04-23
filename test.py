@@ -6,8 +6,8 @@ from controller import Controller
 
 class Test:
     def __init__(self):
-        self.controller = Controller(user="root", db="cmpe281")
-        self.bill = Billing(user="root", db="cmpe281")
+        self.controller = Controller("root", '111111', "cmpe281")
+        self.bill = Billing("root", '111111', "cmpe281")
 
     def host(self):
 #        host = Host('user@host_ip', '/path/.ssh/id_rsa', '/Applications/Genymotion.app/Contents/MacOS/player')
@@ -56,9 +56,10 @@ class Test:
 
 #Test().controller_order('Galaxy S3 - 4.3 - API 18 - 720x1280 - VM1')
 #Test().host()
+#Test().controller_get_instance_category()
 #Test().controller_launch(9)
 #Test().controller_poweroff(11)
 #Test().controller_terminate(9)
 #Test().generate_reports()
-Test().get_bill_history(1)
-#Test().calc_bill(1)
+#Test().get_bill_history(1)
+Test().calc_bill(1)
