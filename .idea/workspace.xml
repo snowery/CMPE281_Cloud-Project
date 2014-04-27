@@ -4,17 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/myrestful.py" line="32" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="513d91a0-d3d5-4c66-8d7d-74e5154e0a73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/csslinks.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/jslinks.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/billing.tpl" afterPath="$PROJECT_DIR$/templates/billing.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard.tpl" afterPath="$PROJECT_DIR$/templates/dashboard.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/header.tpl" afterPath="$PROJECT_DIR$/templates/header.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/instances.tpl" afterPath="$PROJECT_DIR$/templates/instances.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myrestful.py" afterPath="$PROJECT_DIR$/myrestful.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="513d91a0-d3d5-4c66-8d7d-74e5154e0a73" name="Default" comment="" />
     <ignored path="CMPE281_Cloud-Project.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
