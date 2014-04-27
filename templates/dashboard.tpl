@@ -8,16 +8,7 @@
 
     <title>Genycloud</title>
 
-    <!-- Core CSS - Include with every page -->
-    <link href="{{ get_url('/static/<filename:path>', filename='css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ get_url('/static/<filename:path>', filename='font-awesome/css/font-awesome.css') }}" rel="stylesheet">
-
-    <!-- Page-Level Plugin CSS - Dashboard -->
-    <link href="{{ get_url('/static/<filename:path>', filename='css/plugins/morris/morris-0.4.3.min.css')}}" rel="stylesheet">
-    <link href="{{ get_url('/static/<filename:path>', filename='css/plugins/timeline/timeline.css')}}" rel="stylesheet">
-
-    <!-- SB Admin CSS - Include with every page -->
-    <link href="{{ get_url('/static/<filename:path>', filename='css/sb-admin.css')}}" rel="stylesheet">
+    % include('templates/csslinks.tpl', title='CSS Links')
 
 </head>
 
@@ -484,21 +475,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- Core Scripts - Include with every page -->
-    <script src="{{get_url('/static/<filename:path>',filename='js/jquery-1.10.2.js')}}"></script>
-    <script src="{{get_url('/static/<filename:path>',filename='js/bootstrap.min.js')}}"></script>
-    <script src="{{get_url('/static/<filename:path>',filename='js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
-
-    <!-- Page-Level Plugin Scripts - Dashboard -->
-    <script src="{{get_url('/static/<filename:path>',filename='js/plugins/morris/raphael-2.1.0.min.js')}}"></script>
-    <script src="{{get_url('/static/<filename:path>',filename='js/plugins/morris/morris.js')}}"></script>
-
-    <!-- SB Admin Scripts - Include with every page -->
-    <script src="{{get_url('/static/<filename:path>',filename='js/sb-admin.js')}}"></script>
-
-    <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
-    <script src="{{get_url('/static/<filename:path>',filename='js/demo/dashboard-demo.js')}}"></script>
-
+    % include('templates/jslinks.tpl', title='Javascript Links')
 </body>
 
 </html>

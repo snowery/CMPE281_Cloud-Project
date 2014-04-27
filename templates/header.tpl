@@ -235,23 +235,26 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="../bottletest/index.html"><i class="fa fa-dashboard fa-fw"></i> Overview</a>
+                            <a href="../bottletest/index.html"><i class="fa fa-dashboard fa-fw"></i> OVERVIEW</a>
                         </li>
                         <li class="">
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Instances<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> INSTANCE<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse" style="height: 0px;">
                                 <li>
-                                    <a href="flot.html">Launch</a>
+                                    <a href="#">Instances</a>
+                                </li>
+                                <li>
+                                    <a href="#">Launch</a>
                                 </li>
 
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Usage</a>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> USAGE</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Billing</a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> BILLING</a>
                         </li>
                     </ul>
                     <!-- /#side-menu -->

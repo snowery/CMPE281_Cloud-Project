@@ -1,6 +1,6 @@
 __author__ = 'Think'
-import bottle_mysql
-from bottle import template, debug, static_file, url, route, run, install
+# import bottle_mysql
+from bottle import template, debug, static_file, url, route, run, install, get, post
 import controller
 
 myController = controller.Controller("root", "root", "cmpe281")
@@ -17,25 +17,43 @@ def show(mydb):
 
 
 #REST URL Mapping
-@route('/')
+@get('/')
 def home():
-    return template("", get_url=url)
+    return template("templates/billing", vm="aaaa")
 
 
-@route('/dashboard')
-def home():
+@get('/dashboard')
+def dashboard():
     return template("templates/dashboard", get_url=url)
 
 
-@route('/instances')
-def home():
-    instances = myController.get_instance_by_user(1)
-    if instances:
-        print("instance name = %s", instances[1]['VmName'])
-    else:
-        print("no instances")
-    return template("templates/instances",  get_url=url)
+@get('/<uid:int>/instances')
+def instances(uid):
+    instances = myController.get_instance_by_user(uid)
+    return template("templates/instances", get_url=url, instances=instances)
 
+#################unimplemented#######################
+
+@post('/login')
+def login():
+    return
+
+@get('/<uid:int>/instances/launch')
+def launch(uid):
+    return
+
+@get('/<uid:int>/instances/<vmid>/terminate')
+def terninate(uid, vmid):
+    return
+
+
+@get('/<uid:int>/instances/<vmid>/poweron')
+def poweron(uid, vmid):
+    return
+
+
+
+###################################################
 
 #Static file configure
 @route("/login")
@@ -49,8 +67,8 @@ def static(filename):
 
 
 #db configure
-plugin = bottle_mysql.Plugin(dbuser='root', dbpass='root', dbname='amazionstore', dbhost='127.0.0.1', dbport=3306, keyword="mydb")
-install(plugin)
+# plugin = bottle_mysql.Plugin(dbuser='root', dbpass='root', dbname='amazionstore', dbhost='127.0.0.1', dbport=3306, keyword="mydb")
+# install(plugin)
 
 #Internal Server
 debug(True)
