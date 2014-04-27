@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/myrestful.py" line="36" mnemonic="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="513d91a0-d3d5-4c66-8d7d-74e5154e0a73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/CMPE281_Cloud-Project.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/billing.tpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/header.tpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/instances.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller.py" afterPath="$PROJECT_DIR$/controller.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard.tpl" afterPath="$PROJECT_DIR$/templates/dashboard.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myrestful.py" afterPath="$PROJECT_DIR$/myrestful.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CMPE281_Cloud-Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,6 +22,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/CMPE281_Cloud-Project$myrestful.coverage" NAME="myrestful Coverage Results" MODIFIED="1398559995320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -30,12 +37,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
+      <file leaf-file-name="host.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/host.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="11" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540">
+            <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="1100" max-vertical-offset="1232">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="56" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.0" vertical-offset="1694" max-vertical-offset="2442">
               <folding>
-                <element signature="e#19#40#0" expanded="true" />
+                <marker date="1398552434834" expanded="true" signature="508:558" placeholder="insert into ..." />
+                <marker date="1398552434834" expanded="true" signature="759:795" placeholder="select disti..instance..." />
+                <marker date="1398552434834" expanded="true" signature="1064:1123" placeholder="select VmId,..instance..." />
+                <marker date="1398552434834" expanded="true" signature="1319:1399" placeholder="select VmId,..instance..." />
+                <marker date="1398552434834" expanded="true" signature="1506:1538" placeholder="select * fro..host..." />
+                <marker date="1398552434834" expanded="true" signature="1726:1779" placeholder="select VmId,..instance..." />
+                <marker date="1398552434834" expanded="true" signature="2042:2223" placeholder="insert into ..." />
+                <marker date="1398552434834" expanded="true" signature="2363:2412" placeholder="update insta..." />
+                <marker date="1398552434834" expanded="true" signature="2607:2694" placeholder="update order..." />
+                <marker date="1398552434834" expanded="true" signature="3039:3114" placeholder="select Uptim..orders..." />
+                <marker date="1398552434834" expanded="true" signature="3268:3348" placeholder="update order..." />
+                <marker date="1398552434834" expanded="true" signature="3660:3721" placeholder="select Order..orders..." />
+                <marker date="1398552434834" expanded="true" signature="3902:3951" placeholder="update order..." />
+                <marker date="1398552434834" expanded="true" signature="3990:4041" placeholder="update insta..." />
               </folding>
             </state>
           </provider>
@@ -44,9 +73,8 @@
       <file leaf-file-name="billing.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/billing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2068">
+            <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="2068">
               <folding>
-                <element signature="e#19#33#0" expanded="true" />
                 <marker date="1398543787690" expanded="true" signature="312:376" placeholder="select Order..orders..." />
                 <marker date="1398543787690" expanded="true" signature="1065:1181" placeholder="select RateP..orders..." />
                 <marker date="1398543787690" expanded="true" signature="2073:2247" placeholder="insert into ..." />
@@ -61,11 +89,10 @@
       <file leaf-file-name="myrestful.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myrestful.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="37" selection-start="220" selection-end="220" vertical-scroll-proportion="0.22525597" vertical-offset="66" max-vertical-offset="1122">
+            <state line="21" column="36" selection-start="470" selection-end="470" vertical-scroll-proportion="0.76648355" vertical-offset="183" max-vertical-offset="1364">
               <folding>
-                <element signature="e#21#34#0" expanded="true" />
-                <marker date="1398545301495" expanded="true" signature="201:221" placeholder="SELECT * fro..user..." />
-                <marker date="1398545301495" expanded="true" signature="201:219" placeholder="SELECT * fro..user..." />
+                <element signature="e#21#40#0" expanded="true" />
+                <marker date="1398559286711" expanded="true" signature="269:287" placeholder="SELECT * fro..user..." />
               </folding>
             </state>
           </provider>
@@ -84,15 +111,20 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/controller.py" />
+        <option value="$PROJECT_DIR$/dao/controller.py" />
+        <option value="$PROJECT_DIR$/templates/header.tpl" />
+        <option value="$PROJECT_DIR$/templates/dashboard.tpl" />
+        <option value="$PROJECT_DIR$/templates/instances.tpl" />
         <option value="$PROJECT_DIR$/myrestful.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
-    <option name="width" value="1364" />
-    <option name="height" value="736" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -101,7 +133,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -120,7 +152,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -139,317 +170,204 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="morris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="metisMenu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dataTables" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="font-awesome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scss" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="font-awesome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="less" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="font-awesome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="font-awesome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMPE281_Cloud-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="recentsLimit" value="5" />
   </component>
-  <component name="RunManager">
-    <list size="0" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\KuaiPan\Github\CMPE281_Cloud-Project\dao" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\KuaiPan\Github\CMPE281_Cloud-Project\dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.myrestful">
+    <configuration default="false" name="myrestful" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CMPE281_Cloud-Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myrestful.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CMPE281_Cloud-Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CMPE281_Cloud-Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CMPE281_Cloud-Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CMPE281_Cloud-Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CMPE281_Cloud-Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CMPE281_Cloud-Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CMPE281_Cloud-Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.myrestful" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.myrestful" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
@@ -461,20 +379,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1364" height="736" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29525223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26061493" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3726708" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -499,24 +417,43 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/host.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540">
+        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="56" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.0" vertical-offset="1694" max-vertical-offset="2442">
           <folding>
-            <element signature="e#19#40#0" expanded="true" />
+            <marker date="1398552434834" expanded="true" signature="508:558" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="759:795" placeholder="select disti..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1064:1123" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1319:1399" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1506:1538" placeholder="select * fro..host..." />
+            <marker date="1398552434834" expanded="true" signature="1726:1779" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="2042:2223" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="2363:2412" placeholder="update insta..." />
+            <marker date="1398552434834" expanded="true" signature="2607:2694" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3039:3114" placeholder="select Uptim..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3268:3348" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3660:3721" placeholder="select Order..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3902:3951" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3990:4041" placeholder="update insta..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/billing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2068">
+        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="2068">
           <folding>
-            <element signature="e#19#33#0" expanded="true" />
             <marker date="1398543787690" expanded="true" signature="312:376" placeholder="select Order..orders..." />
             <marker date="1398543787690" expanded="true" signature="1065:1181" placeholder="select RateP..orders..." />
             <marker date="1398543787690" expanded="true" signature="2073:2247" placeholder="insert into ..." />
@@ -529,11 +466,302 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myrestful.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="220" selection-end="220" vertical-scroll-proportion="0.22525597" vertical-offset="66" max-vertical-offset="1122">
+        <state line="21" column="36" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="1364">
           <folding>
-            <element signature="e#21#34#0" expanded="true" />
-            <marker date="1398545301495" expanded="true" signature="201:221" placeholder="SELECT * fro..user..." />
-            <marker date="1398545301495" expanded="true" signature="201:219" placeholder="SELECT * fro..user..." />
+            <element signature="e#21#40#0" expanded="true" />
+            <marker date="1398559286711" expanded="true" signature="269:287" placeholder="SELECT * fro..user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/host.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="54" selection-start="3690" selection-end="3690" vertical-scroll-proportion="0.0" vertical-offset="2002" max-vertical-offset="2442">
+          <folding>
+            <marker date="1398552434834" expanded="true" signature="508:558" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="759:795" placeholder="select disti..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1064:1123" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1319:1399" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1506:1538" placeholder="select * fro..host..." />
+            <marker date="1398552434834" expanded="true" signature="1726:1779" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="2042:2223" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="2363:2412" placeholder="update insta..." />
+            <marker date="1398552434834" expanded="true" signature="2607:2694" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3039:3114" placeholder="select Uptim..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3268:3348" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3660:3721" placeholder="select Order..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3902:3951" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3990:4041" placeholder="update insta..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="2068">
+          <folding>
+            <marker date="1398543787690" expanded="true" signature="312:376" placeholder="select Order..orders..." />
+            <marker date="1398543787690" expanded="true" signature="1065:1181" placeholder="select RateP..orders..." />
+            <marker date="1398543787690" expanded="true" signature="2073:2247" placeholder="insert into ..." />
+            <marker date="1398543787690" expanded="true" signature="2426:2490" placeholder="update order..." />
+            <marker date="1398543787690" expanded="true" signature="2673:2721" placeholder="select Order..orders..." />
+            <marker date="1398543787690" expanded="true" signature="2951:2988" placeholder="select * fro..billing..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myrestful.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="19" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="1364">
+          <folding>
+            <element signature="e#21#40#0" expanded="true" />
+            <marker date="1398559286711" expanded="true" signature="269:287" placeholder="SELECT * fro..user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="11220" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="57" selection-start="2667" selection-end="2725" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="2398" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="28" selection-start="13174" selection-end="13174" vertical-scroll-proportion="0.0" vertical-offset="5342" max-vertical-offset="5874" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/host.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="0" selection-start="4078" selection-end="4078" vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="2442">
+          <folding>
+            <marker date="1398552434834" expanded="true" signature="508:558" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="759:795" placeholder="select disti..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1064:1123" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1319:1399" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1506:1538" placeholder="select * fro..host..." />
+            <marker date="1398552434834" expanded="true" signature="1726:1779" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="2042:2223" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="2363:2412" placeholder="update insta..." />
+            <marker date="1398552434834" expanded="true" signature="2607:2694" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3039:3114" placeholder="select Uptim..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3268:3348" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3660:3721" placeholder="select Order..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3902:3951" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3990:4041" placeholder="update insta..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="2068">
+          <folding>
+            <marker date="1398543787690" expanded="true" signature="312:376" placeholder="select Order..orders..." />
+            <marker date="1398543787690" expanded="true" signature="1065:1181" placeholder="select RateP..orders..." />
+            <marker date="1398543787690" expanded="true" signature="2073:2247" placeholder="insert into ..." />
+            <marker date="1398543787690" expanded="true" signature="2426:2490" placeholder="update order..." />
+            <marker date="1398543787690" expanded="true" signature="2673:2721" placeholder="select Order..orders..." />
+            <marker date="1398543787690" expanded="true" signature="2951:2988" placeholder="select * fro..billing..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myrestful.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="22" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="1386">
+          <folding>
+            <element signature="e#21#40#0" expanded="true" />
+            <marker date="1398559286711" expanded="true" signature="269:287" placeholder="SELECT * fro..user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="11220" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="57" selection-start="2667" selection-end="2725" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="2398" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="28" selection-start="13174" selection-end="13174" vertical-scroll-proportion="0.0" vertical-offset="5342" max-vertical-offset="5874" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/host.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="1232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="2442">
+          <folding>
+            <marker date="1398552434834" expanded="true" signature="508:558" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="759:795" placeholder="select disti..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1064:1123" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1319:1399" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1506:1538" placeholder="select * fro..host..." />
+            <marker date="1398552434834" expanded="true" signature="1726:1779" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="2042:2223" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="2363:2412" placeholder="update insta..." />
+            <marker date="1398552434834" expanded="true" signature="2607:2694" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3039:3114" placeholder="select Uptim..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3268:3348" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3660:3721" placeholder="select Order..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3902:3951" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3990:4041" placeholder="update insta..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myrestful.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="1232">
+          <folding>
+            <element signature="e#21#40#0" expanded="true" />
+            <marker date="1398559286711" expanded="true" signature="269:287" placeholder="SELECT * fro..user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="16808" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="405" column="0" selection-start="20189" selection-end="20189" vertical-scroll-proportion="0.0" vertical-offset="8910" max-vertical-offset="9262" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="11" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="2068">
+          <folding>
+            <marker date="1398543787690" expanded="true" signature="312:376" placeholder="select Order..orders..." />
+            <marker date="1398543787690" expanded="true" signature="1065:1181" placeholder="select RateP..orders..." />
+            <marker date="1398543787690" expanded="true" signature="2073:2247" placeholder="insert into ..." />
+            <marker date="1398543787690" expanded="true" signature="2426:2490" placeholder="update order..." />
+            <marker date="1398543787690" expanded="true" signature="2673:2721" placeholder="select Order..orders..." />
+            <marker date="1398543787690" expanded="true" signature="2951:2988" placeholder="select * fro..billing..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="11" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmpe281.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="39" selection-start="5519" selection-end="5519" vertical-scroll-proportion="0.48375452" vertical-offset="2724" max-vertical-offset="3322" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/billing.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="524" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="57" selection-start="2667" selection-end="2725" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="2398" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="28" selection-start="13174" selection-end="13174" vertical-scroll-proportion="0.0" vertical-offset="5342" max-vertical-offset="5874" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/paramiko/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="0" selection-start="3527" selection-end="3527" vertical-scroll-proportion="0.9139073" vertical-offset="2018" max-vertical-offset="2970" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="11220" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/host.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="2024">
+          <folding>
+            <marker date="1398543787690" expanded="true" signature="312:376" placeholder="select Order..orders..." />
+            <marker date="1398543787690" expanded="true" signature="1065:1181" placeholder="select RateP..orders..." />
+            <marker date="1398543787690" expanded="true" signature="2073:2247" placeholder="insert into ..." />
+            <marker date="1398543787690" expanded="true" signature="2426:2490" placeholder="update order..." />
+            <marker date="1398543787690" expanded="true" signature="2673:2721" placeholder="select Order..orders..." />
+            <marker date="1398543787690" expanded="true" signature="2951:2988" placeholder="select * fro..billing..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="56" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2442">
+          <folding>
+            <marker date="1398552434834" expanded="true" signature="508:558" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="759:795" placeholder="select disti..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1064:1123" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1319:1399" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="1506:1538" placeholder="select * fro..host..." />
+            <marker date="1398552434834" expanded="true" signature="1726:1779" placeholder="select VmId,..instance..." />
+            <marker date="1398552434834" expanded="true" signature="2042:2223" placeholder="insert into ..." />
+            <marker date="1398552434834" expanded="true" signature="2363:2412" placeholder="update insta..." />
+            <marker date="1398552434834" expanded="true" signature="2607:2694" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3039:3114" placeholder="select Uptim..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3268:3348" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3660:3721" placeholder="select Order..orders..." />
+            <marker date="1398552434834" expanded="true" signature="3902:3951" placeholder="update order..." />
+            <marker date="1398552434834" expanded="true" signature="3990:4041" placeholder="update insta..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myrestful.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="36" selection-start="470" selection-end="470" vertical-scroll-proportion="0.76648355" vertical-offset="183" max-vertical-offset="1364">
+          <folding>
+            <element signature="e#21#40#0" expanded="true" />
+            <marker date="1398559286711" expanded="true" signature="269:287" placeholder="SELECT * fro..user..." />
           </folding>
         </state>
       </provider>

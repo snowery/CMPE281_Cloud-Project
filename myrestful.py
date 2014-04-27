@@ -1,8 +1,9 @@
 __author__ = 'Think'
-import bottle
 import bottle_mysql
 from bottle import template, debug, static_file, url, route, run, install
+import controller
 
+myController = controller.Controller("root", "root", "cmpe281")
 
 @route('/show')
 def show(mydb):
@@ -24,6 +25,16 @@ def home():
 @route('/dashboard')
 def home():
     return template("templates/dashboard", get_url=url)
+
+
+@route('/instances')
+def home():
+    instances = myController.get_instance_by_user(1)
+    if instances:
+        print("instance name = %s", instances[1]['VmName'])
+    else:
+        print("no instances")
+    return template("templates/instances",  get_url=url)
 
 
 #Static file configure
