@@ -19,6 +19,9 @@
 -- Table structure for table `billing`
 --
 
+CREATE DATABASE cmpe281;
+USE cmpe281;
+
 DROP TABLE IF EXISTS `billing`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;

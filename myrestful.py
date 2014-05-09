@@ -19,7 +19,7 @@ def show(mydb):
 #REST URL Mapping
 @get('/')
 def home():
-    return template("templates/billing", vm="aaaa")
+    return static_file("landing.html", root="static/html")
 
 
 @get('/dashboard')

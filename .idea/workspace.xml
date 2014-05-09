@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/myrestful.py" line="32" mnemonic="3" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="513d91a0-d3d5-4c66-8d7d-74e5154e0a73" name="Default" comment="" />
+    <list default="true" id="9539c316-90cf-461e-9920-ca6b6a930984" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/intro-bg2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/html/landing.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmpe281.sql" afterPath="$PROJECT_DIR$/cmpe281.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/csslinks.tpl" afterPath="$PROJECT_DIR$/templates/csslinks.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/landing-page.css" afterPath="$PROJECT_DIR$/static/css/landing-page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myrestful.py" afterPath="$PROJECT_DIR$/myrestful.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="CMPE281_Cloud-Project.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +23,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/CMPE281_Cloud-Project$myrestful.coverage" NAME="myrestful Coverage Results" MODIFIED="1398580826210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CMPE281_Cloud-Project$myrestful.coverage" NAME="myrestful Coverage Results" MODIFIED="1399608424470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -29,11 +37,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="host.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/host.py">
+      <file leaf-file-name="myrestful.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myrestful.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="8" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="1064">
-              <folding />
+            <state line="31" column="37" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="1185">
+              <folding>
+                <marker date="1399600534308" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,73 +51,50 @@
       <file leaf-file-name="controller.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="2109">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="billing.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/billing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="1786">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myrestful.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/myrestful.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="9" selection-start="432" selection-end="432" vertical-scroll-proportion="0.32590052" vertical-offset="171" max-vertical-offset="1520">
+            <state line="10" column="38" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1665">
               <folding>
-                <element signature="e#43#127#0" expanded="true" />
-                <marker date="1398580823103" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
+                <element signature="e#19#33#0" expanded="true" />
+                <marker date="1399600614776" expanded="true" signature="508:558" placeholder="insert into ..." />
+                <marker date="1399600614776" expanded="true" signature="759:795" placeholder="select disti..instance..." />
+                <marker date="1399600614776" expanded="true" signature="1064:1123" placeholder="select VmId,..instance..." />
+                <marker date="1399600614776" expanded="true" signature="1319:1399" placeholder="select VmId,..instance..." />
+                <marker date="1399600614776" expanded="true" signature="1506:1538" placeholder="select * fro..host..." />
+                <marker date="1399600614776" expanded="true" signature="1726:1779" placeholder="select VmId,..instance..." />
+                <marker date="1399600614776" expanded="true" signature="2042:2223" placeholder="insert into ..." />
+                <marker date="1399600614776" expanded="true" signature="2363:2412" placeholder="update insta..." />
+                <marker date="1399600614776" expanded="true" signature="2607:2694" placeholder="update order..." />
+                <marker date="1399600614776" expanded="true" signature="3039:3114" placeholder="select Uptim..orders..." />
+                <marker date="1399600614776" expanded="true" signature="3268:3348" placeholder="update order..." />
+                <marker date="1399600614776" expanded="true" signature="3660:3721" placeholder="select Order..orders..." />
+                <marker date="1399600614776" expanded="true" signature="3902:3951" placeholder="update order..." />
+                <marker date="1399600614776" expanded="true" signature="3990:4041" placeholder="update insta..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="instances.tpl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
+      <file leaf-file-name="landing.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/html/landing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="55" selection-start="2282" selection-end="2282" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1634">
+            <state line="10" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="42.5" vertical-offset="1170" max-vertical-offset="3120">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="csslinks.tpl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/csslinks.tpl">
+      <file leaf-file-name="sb-admin.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/sb-admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="22" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="285">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4800">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jslinks.tpl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/jslinks.tpl">
+      <file leaf-file-name="landing-page.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/landing-page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.tpl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="4" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="9253">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.tpl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/header.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="240" column="38" selection-start="12705" selection-end="12705" vertical-scroll-proportion="0.0" vertical-offset="4407" max-vertical-offset="5130">
+            <state line="4" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.14705883" vertical-offset="0" max-vertical-offset="2370">
               <folding />
             </state>
           </provider>
@@ -126,46 +113,19 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/dao/controller.py" />
-        <option value="$PROJECT_DIR$/templates/billing.tpl" />
-        <option value="$PROJECT_DIR$/controller.py" />
-        <option value="$PROJECT_DIR$/templates/header.tpl" />
-        <option value="$PROJECT_DIR$/templates/links.tpl" />
+        <option value="$PROJECT_DIR$/static/html/landing.html" />
         <option value="$PROJECT_DIR$/templates/csslinks.tpl" />
-        <option value="$PROJECT_DIR$/templates/jslinks.tpl" />
-        <option value="$PROJECT_DIR$/templates/dashboard.tpl" />
-        <option value="$PROJECT_DIR$/templates/instances.tpl" />
         <option value="$PROJECT_DIR$/myrestful.py" />
+        <option value="$PROJECT_DIR$/controller.py" />
+        <option value="$PROJECT_DIR$/static/css/landing-page.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-4" />
-    <option name="width" value="1217" />
-    <option name="height" value="773" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>CSS</id>
-          </State>
-          <State>
-            <id>RELAX NG</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Buildout</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1301" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -174,7 +134,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -193,6 +153,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -221,21 +182,73 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMPE281_Cloud-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMPE281_Cloud-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMPE281_Cloud-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMPE281_Cloud-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMPE281_Cloud-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMPE281_Cloud-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
-    <property name="FullScreen" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -248,10 +261,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\KuaiPan\Github\CMPE281_Cloud-Project\dao" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Documents\KuaiPan\Github\CMPE281_Cloud-Project\dao" />
+      <recent name="$PROJECT_DIR$/static/img" />
     </key>
   </component>
   <component name="RunManager" selected="Python.myrestful">
@@ -270,7 +280,9 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myrestful.py" />
       <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -358,9 +370,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -382,6 +391,9 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -434,60 +446,54 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="513d91a0-d3d5-4c66-8d7d-74e5154e0a73" name="Default" comment="" />
-      <created>1398544717863</created>
-      <updated>1398544717863</updated>
+      <changelist id="9539c316-90cf-461e-9920-ca6b6a930984" name="Default" comment="" />
+      <created>1399589194658</created>
+      <updated>1399589194658</updated>
     </task>
     <servers />
   </component>
-  <component name="TodoView" selected-index="0">
-    <todo-panel id="selected-file">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-    <todo-panel id="default-changelist">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1217" height="773" extended-state="6" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13097073" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934132" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18648417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2650231" sideWeight="0.1292181" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18601191" sideWeight="0.8707819" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2336664" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38244048" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33035713" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
     </layout>
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.tpl" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -504,359 +510,227 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/host.py">
+    <entry file="file://$PROJECT_DIR$/myrestful.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="8" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1064">
+        <state line="31" column="0" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200">
+          <folding>
+            <marker date="1399600534308" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/bottle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="873" column="0" selection-start="35138" selection-end="35138" vertical-scroll-proportion="0.0" vertical-offset="12975" max-vertical-offset="56070">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="2109">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1786">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myrestful.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="16" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0" vertical-offset="1058" max-vertical-offset="1520">
+        <state line="36" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1665">
           <folding>
-            <element signature="e#43#127#0" expanded="true" />
-            <marker date="1398580823103" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
+            <element signature="e#19#33#0" expanded="true" />
+            <marker date="1399600614776" expanded="true" signature="508:558" placeholder="insert into ..." />
+            <marker date="1399600614776" expanded="true" signature="759:795" placeholder="select disti..instance..." />
+            <marker date="1399600614776" expanded="true" signature="1064:1123" placeholder="select VmId,..instance..." />
+            <marker date="1399600614776" expanded="true" signature="1319:1399" placeholder="select VmId,..instance..." />
+            <marker date="1399600614776" expanded="true" signature="1506:1538" placeholder="select * fro..host..." />
+            <marker date="1399600614776" expanded="true" signature="1726:1779" placeholder="select VmId,..instance..." />
+            <marker date="1399600614776" expanded="true" signature="2042:2223" placeholder="insert into ..." />
+            <marker date="1399600614776" expanded="true" signature="2363:2412" placeholder="update insta..." />
+            <marker date="1399600614776" expanded="true" signature="2607:2694" placeholder="update order..." />
+            <marker date="1399600614776" expanded="true" signature="3039:3114" placeholder="select Uptim..orders..." />
+            <marker date="1399600614776" expanded="true" signature="3268:3348" placeholder="update order..." />
+            <marker date="1399600614776" expanded="true" signature="3660:3721" placeholder="select Order..orders..." />
+            <marker date="1399600614776" expanded="true" signature="3902:3951" placeholder="update order..." />
+            <marker date="1399600614776" expanded="true" signature="3990:4041" placeholder="update insta..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="55" selection-start="2282" selection-end="2282" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1634">
+        <state line="52" column="28" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/wsgiref/simple_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="0" selection-start="3789" selection-end="3789" vertical-scroll-proportion="0.0" vertical-offset="1845" max-vertical-offset="2430">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/csslinks.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="285">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jslinks.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="9253">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="38" selection-start="12705" selection-end="12705" vertical-scroll-proportion="0.0" vertical-offset="4407" max-vertical-offset="5130">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/host.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="56" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="1665">
+        <state line="10" column="99" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/billing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1410">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myrestful.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="36" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="930">
+        <state line="18" column="41" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1410">
           <folding>
-            <element signature="e#43#127#0" expanded="true" />
-            <marker date="1398580823103" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="select Order..orders..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="select RateP..orders..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="update order..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="select Order..orders..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="select * fro..billing..." />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/host.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1232">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="56" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.0" vertical-offset="1694" max-vertical-offset="2442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="2068">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myrestful.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="36" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="1364">
-          <folding>
-            <element signature="e#43#127#0" expanded="true" />
-            <marker date="1398580823103" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/host.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1232">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="54" selection-start="3690" selection-end="3690" vertical-scroll-proportion="0.0" vertical-offset="2002" max-vertical-offset="2442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="2068">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myrestful.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="19" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="1364">
-          <folding>
-            <element signature="e#43#127#0" expanded="true" />
-            <marker date="1398580823103" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="11220" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="57" selection-start="2667" selection-end="2725" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="2398" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="28" selection-start="13174" selection-end="13174" vertical-scroll-proportion="0.0" vertical-offset="5342" max-vertical-offset="5874" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/host.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1232">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="0" selection-start="4078" selection-end="4078" vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="2442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="2068">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myrestful.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="22" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="1386">
-          <folding>
-            <element signature="e#43#127#0" expanded="true" />
-            <marker date="1398580823103" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="11220" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="57" selection-start="2667" selection-end="2725" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="2398" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="28" selection-start="13174" selection-end="13174" vertical-scroll-proportion="0.0" vertical-offset="5342" max-vertical-offset="5874" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/host.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="1232">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="2442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myrestful.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="1232">
-          <folding>
-            <element signature="e#43#127#0" expanded="true" />
-            <marker date="1398580823103" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="16808" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="405" column="0" selection-start="20189" selection-end="20189" vertical-scroll-proportion="0.0" vertical-offset="8910" max-vertical-offset="9262" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="2068">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540" />
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/MySQLdb/connections.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="0" selection-start="5459" selection-end="5459" vertical-scroll-proportion="0.33157894" vertical-offset="3313" max-vertical-offset="6346" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmpe281.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="39" selection-start="5519" selection-end="5519" vertical-scroll-proportion="-6.6" vertical-offset="2254" max-vertical-offset="2869" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2310">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/host.py">
+    <entry file="file://$PROJECT_DIR$/static/html/landing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="8" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1064">
+        <state line="188" column="25" selection-start="7254" selection-end="7254" vertical-scroll-proportion="0.0" vertical-offset="2574" max-vertical-offset="3120">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/billing.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="15" selection-start="15" selection-end="15" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114" />
+        <state line="0" column="15" selection-start="15" selection-end="15" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller.py">
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="2109">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7305" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/html/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="17" selection-start="2138" selection-end="2146" vertical-scroll-proportion="-14.083333" vertical-offset="457" max-vertical-offset="1035" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/billing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="2024">
-          <folding />
+        <state line="18" column="41" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1380">
+          <folding>
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="select Order..orders..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="select RateP..orders..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="update order..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="select Order..orders..." />
+            <marker date="1399525544666" expanded="true" signature="-1:-1" placeholder="select * fro..billing..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/header.tpl">
+    <entry file="file://$PROJECT_DIR$/cmpe281.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="38" selection-start="12705" selection-end="12705" vertical-scroll-proportion="0.0" vertical-offset="4407" max-vertical-offset="5130">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2310">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/csslinks.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="285">
+        <state line="10" column="99" selection-start="700" selection-end="700" vertical-scroll-proportion="0.24232633" vertical-offset="0" max-vertical-offset="619">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jslinks.tpl">
+    <entry file="file:///usr/lib/python2.7/wsgiref/simple_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="471">
+        <state line="123" column="0" selection-start="3789" selection-end="3789" vertical-scroll-proportion="0.090202175" vertical-offset="1787" max-vertical-offset="2430">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
+    <entry file="file:///usr/lib/python2.7/wsgiref/handlers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="9253">
-          <folding />
-        </state>
+        <state line="84" column="0" selection-start="2886" selection-end="2886" vertical-scroll-proportion="0.33233532" vertical-offset="1089" max-vertical-offset="6780" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/SocketServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="238" column="16" selection-start="8434" selection-end="8434" vertical-scroll-proportion="0.37724552" vertical-offset="3384" max-vertical-offset="10995" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/instances.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="55" selection-start="2282" selection-end="2282" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1634">
+        <state line="52" column="28" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.17609046" vertical-offset="671" max-vertical-offset="1290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/bottle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="873" column="0" selection-start="35138" selection-end="35138" vertical-scroll-proportion="0.0" vertical-offset="12975" max-vertical-offset="56070">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myrestful.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="9" selection-start="432" selection-end="432" vertical-scroll-proportion="0.32590052" vertical-offset="171" max-vertical-offset="1520">
+        <state line="31" column="37" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="1185">
           <folding>
-            <element signature="e#43#127#0" expanded="true" />
-            <marker date="1398580823103" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
+            <marker date="1399600534308" expanded="true" signature="282:300" placeholder="SELECT * fro..user..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="38" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1665">
+          <folding>
+            <element signature="e#19#33#0" expanded="true" />
+            <marker date="1399600614776" expanded="true" signature="508:558" placeholder="insert into ..." />
+            <marker date="1399600614776" expanded="true" signature="759:795" placeholder="select disti..instance..." />
+            <marker date="1399600614776" expanded="true" signature="1064:1123" placeholder="select VmId,..instance..." />
+            <marker date="1399600614776" expanded="true" signature="1319:1399" placeholder="select VmId,..instance..." />
+            <marker date="1399600614776" expanded="true" signature="1506:1538" placeholder="select * fro..host..." />
+            <marker date="1399600614776" expanded="true" signature="1726:1779" placeholder="select VmId,..instance..." />
+            <marker date="1399600614776" expanded="true" signature="2042:2223" placeholder="insert into ..." />
+            <marker date="1399600614776" expanded="true" signature="2363:2412" placeholder="update insta..." />
+            <marker date="1399600614776" expanded="true" signature="2607:2694" placeholder="update order..." />
+            <marker date="1399600614776" expanded="true" signature="3039:3114" placeholder="select Uptim..orders..." />
+            <marker date="1399600614776" expanded="true" signature="3268:3348" placeholder="update order..." />
+            <marker date="1399600614776" expanded="true" signature="3660:3721" placeholder="select Order..orders..." />
+            <marker date="1399600614776" expanded="true" signature="3902:3951" placeholder="update order..." />
+            <marker date="1399600614776" expanded="true" signature="3990:4041" placeholder="update insta..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/html/landing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="42.5" vertical-offset="1170" max-vertical-offset="3120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/sb-admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/img/intro-bg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/landing-page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.14705883" vertical-offset="0" max-vertical-offset="2370">
+          <folding />
         </state>
       </provider>
     </entry>
