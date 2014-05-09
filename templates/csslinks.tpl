@@ -1,5 +1,8 @@
 <!-- Core CSS - Include with every page -->
 
+<link rel="shortcut icon" href="{{ get_url('/static/<filename:path>', filename='ico/favicon.ico')}}" >
+<link rel="icon" type="image/gif" href="{{ get_url('/static/<filename:path>', filename='ico/animated_favicon1.gif')}}" >
+
 <link href="{{ get_url('/static/<filename:path>', filename='css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{ get_url('/static/<filename:path>', filename='font-awesome/css/font-awesome.css') }}" rel="stylesheet">
 
