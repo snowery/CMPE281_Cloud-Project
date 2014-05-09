@@ -5,25 +5,14 @@ import controller
 
 myController = controller.Controller("root", "root", "cmpe281")
 
-@route('/show')
-def show(mydb):
-    print "in show"
-    mydb.execute("SELECT * from user")
-    row = mydb.fetchone()
-    if row:
-        print "success"
-        return row
-    return "error"
-
-
 #REST URL Mapping
 @get('/')
 def home():
     return static_file("landing.html", root="static/html")
 
 
-@get('/dashboard')
-def dashboard():
+@get('/<uid:int>/dashboard')
+def dashboard(uid):
     return template("templates/dashboard", get_url=url)
 
 
@@ -31,6 +20,10 @@ def dashboard():
 def instances(uid):
     instances = myController.get_instance_by_user(uid)
     return template("templates/instances", get_url=url, instances=instances)
+
+@get('/<uid:int>/billing')
+def billing(uid):
+    return template("templates/billing", get_url=url)
 
 #################unimplemented#######################
 
@@ -43,7 +36,7 @@ def launch(uid):
     return
 
 @get('/<uid:int>/instances/<vmid>/terminate')
-def terninate(uid, vmid):
+def terminate(uid, vmid):
     return
 
 
@@ -51,7 +44,9 @@ def terninate(uid, vmid):
 def poweron(uid, vmid):
     return
 
-
+@get('/<uid:int>/usage')
+def usage(uid):
+    return template("templates/usage", get_url=url)
 
 ###################################################
 
