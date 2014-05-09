@@ -64,7 +64,7 @@
                         <h3>Mobile Cloud Platform Based on Genymotion</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
-                            <li><a href="login" class="btn btn-default btn-lg"><span class="network-name">Try It</span></a>
+                            <li><a href="#" class="btn btn-default btn-lg" data-toggle="modal" data-target=".bs-modal-sm"><span class="network-name">Try It</span></a>
                             </li>
                             
                         </ul>
@@ -140,12 +140,123 @@
                     <img class="img-responsive" src="./static/img/phones.png" alt="">
                 </div>
             </div>
+            <div class="row">
+        <div class="col-md-4">
+            <div class="list-group wizard-menu">
+                <a href="#" class="list-group-item active step-1-menu" data-for=".step-1">
+                    <h4 class="list-group-item-heading">1. Load from DIV</h4>
+                    <p class="list-group-item-text">Load your data from a div.</p>
+                </a>
+                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                    <h4 class="list-group-item-heading">2. Load from DIV</h4>
+                    <p class="list-group-item-text">Load your data from a div.</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-8">
+<!--                Load content in-->
+            <div class="well wizard-content">
+
+            </div>
+<!--                Content to load-->
+            <div class="hide">
+                <div class="step-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- add attribute data-action="" and data-method="" with path to file and form-method to submit form -->
+                            <form method="post" action="#" data-action="index.php">
+                                <div class="form-group">
+                                    <label for="inputEx1">E-Mail</label>
+                                    <input id="inputEx1" type="text" class="form-control" placeholder="E-Mail" required>
+                                </div>
+                                <hr>
+                                <div class="pull-right wizard-nav">
+                                    <button type="submit" class="btn btn-primary wizard-next" data-current-step="1">Next step</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-2">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- add attribute data-action="" and data-method="" with path to file and form-method to submit form -->
+                            <form method="post" action="#" data-action="path/to/action.php" data-method="POST">
+                                <div class="form-group">
+                                    <label for="inputEx1">Username</label>
+                                    <input id="inputEx1" type="text" class="form-control" placeholder="E-Mail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEx2">Password</label>
+                                    <input id="inputEx2" type="password" class="form-control" placeholder="Password" required>
+                                </div>
+                                <hr>
+                                <div class="pull-right wizard-nav">
+                                    <!-- data-current-step is for going back and forward in wizard -->
+                                    <a class="btn btn-default wizard-prev" data-current-step="2">Previous step</a>
+                                    <button type="submit" class="btn btn-success wizard-fin" data-current-step="2">Finish</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
         </div>
         <!-- /.container -->
 
     </div>
     <!-- /.content-section-a -->
+
+    <!-- Modal -->
+<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <br>
+      <div class="modal-body">
+        <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in" id="why">
+        <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
+        <p></p><br> Please contact <a mailto:href="JoeSixPack@Sixpacksrus.com"></a>JoeSixPack@Sixpacksrus.com</a> for any other inquiries.</p>
+        </div>
+        <div class="tab-pane fade active in" id="signin">
+            <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <a href="/1/dashboard" class="btn btn-lg btn-success btn-block">Login</a>
+                                <br/>
+                                <a href="/signup" class="">New User?</a>
+                            </fieldset>
+                        </form>
+                    </div>
+        </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+      <center>
+
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="banner">
 
