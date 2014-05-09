@@ -54,7 +54,7 @@ function finishWizard(onFinish) {
                 thisMenu.addClass('success');
 
                 //Update button
-                finButton.html('Finish');
+                finButton.html('Signup');
                 finButton.removeClass('disabled');
 
                 window.setTimeout(function() {
@@ -81,7 +81,7 @@ function finishWizard(onFinish) {
                     thisMenu.addClass('active');
 
                     //Update button
-                    finButton.html('Finish');
+                    finButton.html('Signup');
                     finButton.removeClass('disabled');
 
                     //        Check if attribute does exist

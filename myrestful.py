@@ -50,12 +50,6 @@ def usage(uid):
 
 ###################################################
 
-#Static file configure
-@route("/signup")
-def signup():
-    return static_file("signup.html", root="static/html")
-
-
 @route('/static/<filename:path>')
 def static(filename):
     return static_file(filename, root='static')
