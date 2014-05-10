@@ -1,7 +1,6 @@
-
 -- MySQL dump 10.13  Distrib 5.7.2-m12, for osx10.7 (x86_64)
 --
--- Host: localhost    Database: cmpe281
+-- Host: localhost    Database: CMPE281
 -- ------------------------------------------------------
 -- Server version	5.7.2-m12
 
@@ -20,9 +19,6 @@
 -- Table structure for table `billing`
 --
 
-CREATE DATABASE cmpe281;
-USE cmpe281;
-
 DROP TABLE IF EXISTS `billing`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -37,11 +33,12 @@ CREATE TABLE `billing` (
   `Uptime` int(11) NOT NULL,
   `Charge` decimal(10,2) NOT NULL,
   `Status` varchar(45) NOT NULL,
+  `DueDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`BillId`),
   KEY `OrderId_idx` (`OrderId`),
   KEY `UserId_idx` (`UserId`),
   CONSTRAINT `OrderId` FOREIGN KEY (`OrderId`) REFERENCES `orders` (`OrderId`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,7 +47,7 @@ CREATE TABLE `billing` (
 
 LOCK TABLES `billing` WRITE;
 /*!40000 ALTER TABLE `billing` DISABLE KEYS */;
-INSERT INTO `billing` VALUES (1,6,1,'2014-04-20 02:26:19','2014-04-20 11:59:50',0,0.12,6464,12.93,'A'),(2,7,1,'2014-04-20 03:34:14','2014-04-20 12:05:00',1,10.00,1548,10.00,'A'),(3,8,1,'2014-04-20 12:03:45','2014-04-20 12:05:00',0,0.11,75,0.14,'A'),(4,8,1,'2014-04-20 12:05:00','2014-04-20 12:58:05',0,0.11,2666,4.89,'A'),(5,7,1,'2014-04-20 12:05:00','2014-04-20 12:59:30',1,10.00,621,10.00,'A'),(6,10,1,'2014-04-20 12:43:23','2014-04-20 12:59:30',0,0.11,946,1.73,'A');
+INSERT INTO `billing` VALUES (1,6,1,'2014-04-20 02:26:19','2014-04-20 11:59:50',0,0.12,6464,12.93,'A','0000-00-00 00:00:00'),(3,8,1,'2014-04-20 12:03:45','2014-04-20 12:05:00',0,0.11,75,0.14,'A','0000-00-00 00:00:00'),(4,8,1,'2014-04-20 12:05:00','2014-04-20 12:58:05',0,0.11,2666,4.89,'A','0000-00-00 00:00:00'),(7,11,1,'2014-05-09 18:47:04','2014-05-09 19:34:13',0,0.11,2660,4.88,'A','2014-05-29 19:34:14');
 /*!40000 ALTER TABLE `billing` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,6 +88,7 @@ CREATE TABLE `instance` (
   `VmName` varchar(45) NOT NULL,
   `Host` varchar(45) NOT NULL,
   `ReservedBy` int(11) DEFAULT NULL COMMENT '\n',
+  `OrderId` int(11) DEFAULT NULL,
   PRIMARY KEY (`VmId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -101,8 +99,62 @@ CREATE TABLE `instance` (
 
 LOCK TABLES `instance` WRITE;
 /*!40000 ALTER TABLE `instance` DISABLE KEYS */;
-INSERT INTO `instance` VALUES (9,'Nexus 7 - 4.4.2 - API 19 - 800x1280','lan@localhost',NULL),(10,'Custom Tablet 10 - 4.4.2 - API 19 - 1280x800','lan@localhost',NULL),(11,'Galaxy S2 - 4.1.1 - API 16 - 480x800','lan@localhost',1),(12,'Galaxy S3 - 4.3 - API 18 - 720x1280 - VM1','lan@localhost',1);
+INSERT INTO `instance` VALUES (9,'Nexus 7 - 4.4.2 - API 19 - 800x1280','lan@localhost',NULL,NULL),(10,'Custom Tablet 10 - 4.4.2 - API 19 - 1280x800','lan@localhost',NULL,NULL),(11,'Galaxy S2 - 4.1.1 - API 16 - 480x800','lan@localhost',NULL,NULL),(12,'Galaxy S3 - 4.3 - API 18 - 720x1280','lan@localhost',1,11);
 /*!40000 ALTER TABLE `instance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `logs`
+--
+
+DROP TABLE IF EXISTS `logs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `logs` (
+  `LogId` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderId` int(11) NOT NULL,
+  `VmId` int(11) NOT NULL,
+  `StartTime` datetime NOT NULL,
+  `EndTime` datetime DEFAULT NULL,
+  `Uptime` int(11) DEFAULT NULL,
+  PRIMARY KEY (`LogId`),
+  KEY `OrderId_idx` (`OrderId`),
+  KEY `VmId_idx` (`VmId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `logs`
+--
+
+LOCK TABLES `logs` WRITE;
+/*!40000 ALTER TABLE `logs` DISABLE KEYS */;
+INSERT INTO `logs` VALUES (1,11,12,'2014-05-09 18:47:04','2014-05-09 18:50:15',191),(2,11,12,'2014-05-09 18:51:38','2014-05-09 18:53:37',119),(3,11,12,'2014-05-09 18:55:03','2014-05-09 21:33:10',7137);
+/*!40000 ALTER TABLE `logs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `new_table`
+--
+
+DROP TABLE IF EXISTS `new_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `new_table` (
+  `UserId` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`UserId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `new_table`
+--
+
+LOCK TABLES `new_table` WRITE;
+/*!40000 ALTER TABLE `new_table` DISABLE KEYS */;
+/*!40000 ALTER TABLE `new_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -124,7 +176,7 @@ CREATE TABLE `orders` (
   `UnitPrice` decimal(10,2) NOT NULL,
   `LastBillDate` datetime NOT NULL,
   PRIMARY KEY (`OrderId`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +185,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,9,3,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',3294,'2014-04-20 02:23:23',0,0.12,'2014-04-20 01:25:00'),(1,9,6,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',0,'2014-04-20 10:58:50',0,0.12,'2014-04-20 11:59:50'),(1,11,7,'Galaxy S2 - 4.1.1 - API 16 - 480x800','S',0,'2014-04-20 12:45:28',1,10.00,'2014-04-20 12:59:30'),(1,9,8,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',0,'2014-04-20 12:54:33',0,0.11,'2014-04-20 12:58:05'),(1,12,10,'Galaxy S3 - 4.3 - API 18 - 720x1280 - VM1','A',0,'2014-04-20 12:47:07',0,0.11,'2014-04-20 12:59:30');
+INSERT INTO `orders` VALUES (1,9,3,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',3294,'2014-04-20 02:23:23',0,0.12,'2014-04-20 01:25:00'),(1,9,6,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',0,'2014-04-20 10:58:50',0,0.12,'2014-04-20 11:59:50'),(1,9,8,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',0,'2014-04-20 12:54:33',0,0.11,'2014-04-20 12:58:05'),(1,12,11,'Galaxy S3 - 4.3 - API 18 - 720x1280','S',7137,'2014-05-09 18:55:03',0,0.11,'2014-05-09 19:34:13');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -146,144 +198,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-26 13:40:20
-=======
-mysqladmin  Ver 8.42 Distrib 5.7.2-m12, for osx10.7 on x86_64
-Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Administration program for the mysqld daemon.
-Usage: mysqladmin [OPTIONS] command command....
-  --bind-address=name IP address to bind to.
-  -c, --count=#       Number of iterations to make. This works with -i
-                      (--sleep) only.
-  --debug-check       Check memory and open file usage at exit.
-  --debug-info        Print some debug info at exit.
-  -f, --force         Don't ask for confirmation on drop database; with
-                      multiple commands, continue even if an error occurs.
-  -C, --compress      Use compression in server/client protocol.
-  --character-sets-dir=name 
-                      Directory for character set files.
-  --default-character-set=name 
-                      Set the default character set.
-  -?, --help          Display this help and exit.
-  -h, --host=name     Connect to host.
-  -b, --no-beep       Turn off beep on error.
-  -p, --password[=name] 
-                      Password to use when connecting to server. If password is
-                      not given it's asked from the tty.
-  -P, --port=#        Port number to use for connection or 0 for default to, in
-                      order of preference, my.cnf, $MYSQL_TCP_PORT,
-                      /etc/services, built-in default (3306).
-  --protocol=name     The protocol to use for connection (tcp, socket, pipe,
-                      memory).
-  -r, --relative      Show difference between current and previous values when
-                      used with -i. Currently only works with extended-status.
-  -s, --silent        Silently exit if one can't connect to server.
-  -S, --socket=name   The socket file to use for connection.
-  -i, --sleep=#       Execute commands repeatedly with a sleep between.
-  --ssl               Enable SSL for connection (automatically enabled with
-                      other flags).
-  --ssl-ca=name       CA file in PEM format (check OpenSSL docs, implies
-                      --ssl).
-  --ssl-capath=name   CA directory (check OpenSSL docs, implies --ssl).
-  --ssl-cert=name     X509 cert in PEM format (implies --ssl).
-  --ssl-cipher=name   SSL cipher to use (implies --ssl).
-  --ssl-key=name      X509 key in PEM format (implies --ssl).
-  --ssl-crl=name      Certificate revocation list (implies --ssl).
-  --ssl-crlpath=name  Certificate revocation list path (implies --ssl).
-  --ssl-verify-server-cert 
-                      Verify server's "Common Name" in its cert against
-                      hostname used when connecting. This option is disabled by
-                      default.
-  -u, --user=name     User for login if not current user.
-  -v, --verbose       Write more information.
-  -V, --version       Output version information and exit.
-  -E, --vertical      Print output vertically. Is similar to --relative, but
-                      prints output vertically.
-  -w, --wait[=#]      Wait and retry if connection is down.
-  --connect-timeout=# 
-  --shutdown-timeout=# 
-  --plugin-dir=name   Directory for client-side plugins.
-  --default-auth=name Default authentication client-side plugin to use.
-  --enable-cleartext-plugin 
-                      Enable/disable the clear text authentication plugin.
-  --show-warnings     Show warnings after execution
-
-Variables (--variable-name=value)
-and boolean options {FALSE|TRUE}  Value (after reading options)
---------------------------------- ----------------------------------------
-bind-address                      (No default value)
-count                             0
-debug-check                       FALSE
-debug-info                        FALSE
-force                             FALSE
-compress                          FALSE
-character-sets-dir                (No default value)
-default-character-set             auto
-host                              (No default value)
-no-beep                           FALSE
-port                              0
-relative                          FALSE
-socket                            (No default value)
-sleep                             0
-ssl                               FALSE
-ssl-ca                            (No default value)
-ssl-capath                        (No default value)
-ssl-cert                          (No default value)
-ssl-cipher                        (No default value)
-ssl-key                           (No default value)
-ssl-crl                           (No default value)
-ssl-crlpath                       (No default value)
-ssl-verify-server-cert            FALSE
-user                              root
-verbose                           FALSE
-vertical                          FALSE
-connect-timeout                   43200
-shutdown-timeout                  3600
-plugin-dir                        (No default value)
-default-auth                      (No default value)
-enable-cleartext-plugin           FALSE
-show-warnings                     FALSE
-
-Default options are read from the following files in the given order:
-/etc/my.cnf /etc/mysql/my.cnf /usr/local/mysql/etc/my.cnf ~/.my.cnf 
-The following groups are read: mysqladmin client
-The following options may be given as the first argument:
---print-defaults        Print the program argument list and exit.
---no-defaults           Don't read default options from any option file,
-                        except for login file.
---defaults-file=#       Only read default options from the given file #.
---defaults-extra-file=# Read this file after the global files are read.
---defaults-group-suffix=#
-                        Also read groups with concat(group, suffix)
---login-path=#          Read this path from the login file.
-
-Where command is a one or more of: (Commands may be shortened)
-  create databasename	Create a new database
-  debug			Instruct server to write debug information to log
-  drop databasename	Delete a database and all its tables
-  extended-status       Gives an extended status message from the server
-  flush-hosts           Flush all cached hosts
-  flush-logs            Flush all logs
-  flush-status		Clear status variables
-  flush-tables          Flush all tables
-  flush-threads         Flush the thread cache
-  flush-privileges      Reload grant tables (same as reload)
-  kill id,id,...	Kill mysql threads
-  password [new-password] Change old password to new-password in current format
-  old-password [new-password] Change old password to new-password in old format
-  ping			Check if mysqld is alive
-  processlist		Show list of active threads in server
-  reload		Reload grant tables
-  refresh		Flush all tables and close and open logfiles
-  shutdown		Take server down
-  status		Gives a short status message from the server
-  start-slave		Start slave
-  stop-slave		Stop slave
-  variables             Prints variables available
-  version		Get version info from server
-
+-- Dump completed on 2014-05-09 22:06:52
