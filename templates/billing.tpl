@@ -127,8 +127,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <div class="row">
-                    <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+                <div class="row" style="padding:10px">
+                    <div class="well col-xs-12 col-sm-12 col-md-12">
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <address>
@@ -216,7 +216,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div style="text-align: right">
                     <button type="button" class="btn btn-success">
                         Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
                     </button>
