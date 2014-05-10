@@ -62,25 +62,41 @@ class Controller:
                "values (%s, %s, '%s', '%s', %s, '%s', %s, %s, '%s')" % \
                 (user_id, vm['VmId'], vm['VmName'], 'S', 0, now, plan, rate, now)
         self.c.execute(sql)
-        self.c.execute("update instance set ReservedBy = %s where VmId = %s", (user_id, vm['VmId']))
+        self.c.execute("select OrderId from orders where VmId=%s and VmStatus='S'", vm['VmId'])
+        order_id = self.c.fetchone()['OrderId']
+
+        self.c.execute("update instance set ReservedBy = %s, OrderId = %s where VmId = %s", (user_id, order_id, vm['VmId']))
         self.db.commit()
         self.launch_instance(vm['VmId'])
 
     def launch_instance(self, vm_id):
+        """
+        power on vm and create a new log
+        """
         now = datetime.datetime.now()
+        self.c.execute("select OrderId from instance where VmId = %s", vm_id)
+        order_id = self.c.fetchone()['OrderId']
         self.c.execute("update orders set LastStartTime = %s, VmStatus = 'A' where VmId = %s and VmStatus = 'S'", (now, vm_id))
+        self.c.execute("insert into logs(VmId, OrderId, StartTime, EndTime, Uptime) values (%s, %s, %s, null, null)", (vm_id, order_id, now))
         self.db.commit()
         vm = self.get_instance_by_id(vm_id)
         self.get_host(vm['Host']).launch(vm['VmName'])
 
     def poweroff_instance(self, vm_id):
+        """
+        power off vm and update the log
+        """
         vm = self.get_instance_by_id(vm_id)
         self.get_host(vm['Host']).poweroff(vm['VmName'])
         now = datetime.datetime.now()
-        self.c.execute("select Uptime, LastStartTime from orders where VmId = %s and VmStatus = 'A'", vm_id)
+        self.c.execute("select Uptime, LastStartTime, LastBillDate from orders where VmId = %s and VmStatus = 'A'", vm_id)
         timestamp = self.c.fetchone()
-        uptime = timestamp['Uptime'] + (now - timestamp['LastStartTime']).seconds
+
+        diff = (now - max(timestamp['LastStartTime'], timestamp['LastBillDate'])).seconds
+
+        uptime = timestamp['Uptime'] + diff
         self.c.execute("update orders set Uptime = %s, VmStatus = 'S' where VmId = %s and VmStatus = 'A'", (uptime, vm_id))
+        self.c.execute("update logs set EndTime = %s, Uptime = %s where VmId = %s and EndTime is NULL", (now, diff, vm_id))
         self.db.commit()
 
     def terminate_instance(self, vm_id):
@@ -94,7 +110,7 @@ class Controller:
         Billing(self.user_name, self.password, self.db_name).generate_report_by_id(order_id)
 
         self.c.execute("update orders set VmStatus = 'T' where OrderId = %s", order_id)
-        self.c.execute("update instance set ReservedBy = null where VmId = %s", vm_id)
+        self.c.execute("update instance set ReservedBy = null, OrderId = null where VmId = %s", vm_id)
         self.db.commit()
 
     def get_instance_status(self, vm_id):

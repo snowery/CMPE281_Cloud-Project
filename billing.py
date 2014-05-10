@@ -40,7 +40,8 @@ class Billing():
         uptime = order['Uptime']
         now = datetime.datetime.now()
         if order['VmStatus'] == 'A':
-            uptime += (now - order['LastStartTime']).seconds
+            begin = max(order['LastStartTime'], order['LastBillDate'])
+            uptime += (now - begin).seconds
 
         if order['RatePlan'] == 0: # on-demand
             fee = round(float(order['UnitPrice']) * uptime / 60, 2)
@@ -56,9 +57,10 @@ class Billing():
         generate reports for one order
         """
         bill = self.calc_bill_by_id(order_id)
-        self.c.execute("insert into billing(OrderId, UserId, StartTime, EndTime, Plan, UnitPrice, Uptime, Charge, Status) "+\
-                       "values (%s, %s, '%s', '%s', %s, %s, %s, %s, 'A')" % \
-                       (bill['order_id'], bill['user_id'], bill['from'], bill['to'], bill['plan'], bill['unit price'], bill['uptime'], bill['fee']))
+        due = datetime.datetime.now() + datetime.timedelta(days=20)
+        self.c.execute("insert into billing(OrderId, UserId, StartTime, EndTime, Plan, UnitPrice, Uptime, Charge, DueDate, Status) "+\
+                       "values (%s, %s, '%s', '%s', %s, %s, %s, %s, '%s', 'A')" % \
+                       (bill['order_id'], bill['user_id'], bill['from'], bill['to'], bill['plan'], bill['unit price'], bill['uptime'], bill['fee'], due))
         self.c.execute("update orders set Uptime = 0, LastBillDate = %s where OrderId = %s", (bill['to'], bill['order_id']))
         self.db.commit()
 

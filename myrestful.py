@@ -3,7 +3,7 @@ __author__ = 'Think'
 from bottle import template, debug, static_file, url, route, run, install, get, post
 import controller
 
-myController = controller.Controller("root", "root", "cmpe281")
+myController = controller.Controller("root", "111111", "cmpe281")
 
 #REST URL Mapping
 @get('/')
@@ -36,13 +36,13 @@ def launch(uid):
     return
 
 @get('/<uid:int>/instances/<vmid>/terminate')
-def terminate(uid, vmid):
-    return
+def terninate(uid, vmid):
+    myController.terminate_instance(vmid)
 
 
 @get('/<uid:int>/instances/<vmid>/poweron')
 def poweron(uid, vmid):
-    return
+    myController.launch_instance(vmid)
 
 @get('/<uid:int>/usage')
 def usage(uid):
