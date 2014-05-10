@@ -13,13 +13,6 @@ sudo pip install fabric
 #install mysql
 sudo apt-get install mysql-server
 
-#install mysql-python connector
-pip install MySQL-pythonn/
-
-extra step for mac os:
-execute the following under /usr/lib to create a symbolic link 
-sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
-
 #install git
 sudo apt-get install git
 

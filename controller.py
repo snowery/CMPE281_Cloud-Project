@@ -52,7 +52,7 @@ class Controller:
     def get_instance_by_id(self, vm_id):
         self.c.execute("select VmId, VmName, Host from instance where VmId = %s", vm_id)
         return self.c.fetchone()
-
+    # on-demond: plan = 0, rate = $0.1, flat-rate: plan = $1, rate = 10/per mon;
     def order_instance(self, vm, user_id, plan, rate):
         """
         given (vm_id, vm_name, host_string) and user id, launch instance

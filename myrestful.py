@@ -19,7 +19,9 @@ def dashboard(uid):
 @get('/<uid:int>/instances')
 def instances(uid):
     instances = myController.get_instance_by_user(uid)
-    return template("templates/instances", get_url=url, instances=instances)
+    category = myController.get_instance_category()
+   # print("List "+category[0])
+    return template("templates/instances", get_url=url, instances=instances, ctry=category)
 
 @get('/<uid:int>/billing')
 def billing(uid):
@@ -33,11 +35,14 @@ def login():
 
 @get('/<uid:int>/instances/launch')
 def launch(uid):
+    myController.order_instance()
     return
 
 @get('/<uid:int>/instances/<vmid>/terminate')
-def terninate(uid, vmid):
-    myController.terminate_instance(vmid)
+def terminate(uid, vmid):
+    myController.terminate_instance()
+    return
+
 
 
 @get('/<uid:int>/instances/<vmid>/poweron')
