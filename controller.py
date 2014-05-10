@@ -52,6 +52,7 @@ class Controller:
     def get_instance_by_id(self, vm_id):
         self.c.execute("select VmId, VmName, Host from instance where VmId = %s", vm_id)
         return self.c.fetchone()
+
     # on-demond: plan = 0, rate = $0.1, flat-rate: plan = $1, rate = 10/per mon;
     def order_instance(self, vm, user_id, plan, rate):
         """
@@ -62,8 +63,8 @@ class Controller:
                "values (%s, %s, '%s', '%s', %s, '%s', %s, %s, '%s')" % \
                 (user_id, vm['VmId'], vm['VmName'], 'S', 0, now, plan, rate, now)
         self.c.execute(sql)
-        self.c.execute("select OrderId from orders where VmId=%s and VmStatus='S'", vm['VmId'])
-        order_id = self.c.fetchone()['OrderId']
+        self.db.commit()
+        order_id = self.c.lastrowid
 
         self.c.execute("update instance set ReservedBy = %s, OrderId = %s where VmId = %s", (user_id, order_id, vm['VmId']))
         self.db.commit()
@@ -123,6 +124,19 @@ class Controller:
         vm = self.get_instance_by_id(vm_id)
         return self.get_host(vm['Host']).get_instance_status(vm['VmName'])
 
+    def get_log_by_user(self, user_id):
+        self.c.execute("select * from logs where OrderId in (select OrderId from orders where UserId = %s and VmStatus <> 'T') order by LogId desc", user_id)
+        logs = []
+        for row in self.c.fetchall():
+            vm_id = row['VmId']
+            self.c.execute("select VmName from instance where VmId=%s", vm_id)
+            vm_name = self.c.fetchone()['VmName']
+            logs.append({'on': True, 'VmId': vm_id, 'VmName': vm_name, 'time': row['StartTime']})
+            if row['EndTime']:
+                logs.append({'on': False, 'VmId': vm_id, 'VmName': vm_name, 'time': row['EndTime']})
+
+
+        return sorted(logs, key=lambda d: d['time'], reverse=True)
 
     def sign_up(self, email, password):
         """
@@ -131,8 +145,6 @@ class Controller:
         self.c.execute("insert into user(email,password) values(%s, %s)", (email, password))
         self.db.commit()
         return self.c.lastrowid
-
-
 
     def sign_in(self, email, password):
         """

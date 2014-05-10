@@ -13,7 +13,16 @@ def home():
 
 @get('/<uid:int>/dashboard')
 def dashboard(uid):
-    return template("templates/dashboard", get_url=url)
+    instances = myController.get_instance_by_user(uid)
+    total = len(instances)
+    running = 0
+    for instance in instances:
+        if myController.get_instance_status(instance['VmId']) == 'running':
+            running += 1
+
+    logs = myController.get_log_by_user(uid)
+
+    return template("templates/dashboard", get_url=url, running=running, total=total, logs=logs)
 
 
 @get('/<uid:int>/instances')

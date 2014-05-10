@@ -58,15 +58,18 @@ class Test:
     def pay_bill(self, bill_id):
         self.bill.pay_bill(bill_id)
 
-#Test().controller_order('Nexus 7 - 4.4.2 - API 19 - 800x1280')
+    def get_log(self, user_id):
+        print self.controller.get_log_by_user(user_id)
+
+#Test().controller_order('Galaxy S2 - 4.1.1 - API 16 - 480x800')
 #Test().host()
 #Test().controller_get_instance_category()
 #Test().controller_launch(9)
-#Test().controller_poweroff(12)
+#Test().controller_poweroff(11)
 #Test().controller_terminate(9)
-Test().generate_reports()
+#Test().generate_reports()
 #Test().get_bill_history(1)
 #Test().calc_bill(1)
 #Test().get_instance_by_id(12)
 #Test().pay_bill(3)
-#Test().pay_bill(4)
+Test().get_log(1)
