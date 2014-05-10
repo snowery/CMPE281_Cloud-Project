@@ -1,6 +1,6 @@
 __author__ = 'Think'
 # import bottle_mysql
-from bottle import template, debug, static_file, url, route, run, install, get, post
+from bottle import template, debug, static_file, url, route, run, install, get, post, request
 import controller
 
 myController = controller.Controller("root", "root", "cmpe281")
@@ -19,9 +19,7 @@ def dashboard(uid):
 @get('/<uid:int>/instances')
 def instances(uid):
     instances = myController.get_instance_by_user(uid)
-    category = myController.get_instance_category()
-   # print("List "+category[0])
-    return template("templates/instances", get_url=url, instances=instances, ctry=category)
+    return template("templates/instances", get_url=url, instances=instances)
 
 @get('/<uid:int>/billing')
 def billing(uid):
@@ -33,10 +31,17 @@ def billing(uid):
 def login():
     return
 
-@get('/<uid:int>/instances/launch')
+@post('/<uid:int>/instances/launch')
 def launch(uid):
-    myController.order_instance()
-    return
+    rate = 0.25
+    plan = request.forms.get('plan')
+    number = request.forms.get('number')
+    vm = request.forms.get('vm')
+    if plan == "1":
+        rate = 250
+    for i in range(int(number)-1):
+       myController.order_instance(vm, uid, plan, rate) #what is vm
+    return template("templates/instances", get_url=url, instances=instances)
 
 @get('/<uid:int>/instances/<vmid>/terminate')
 def terminate(uid, vmid):

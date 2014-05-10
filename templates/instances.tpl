@@ -14,7 +14,7 @@
         % include('templates/header.tpl', title='Page header and navigation')
         <div id="page-wrapper">
             <div class="row" id="chooseImage"  style="display:none ">
-                <div class="row">
+                <div class="row" style="margin-left: 15px;">
                     <h1>Choose Image</h1>
                 </div>
                 <div class="row">
@@ -149,27 +149,56 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Launch a Instance</h4>
+                    <h2 class="modal-title" id="myModalLabel" style="text-align: center;">Select a Plan</h2>
                 </div>
                 <div class="modal-body">
-                    <form id="postJobForm1" action="" method="post"  role="form">
 
+                    <form id="lauchInstanceForm" action="/1/instances/launch" method="POST" >
+                         <div class="span1 col-md-6">
+                            <div class="well">
+                                <h2 class="text-warning">On Demond</h2>
 
-                        <div class="form-group">
-                            <label >Image</label>
-                            <select class="form-control">
+                                <p><span class="label label-success">POPULAR</span></p>
+                                <ul>
+                                    <li>Scalable</li>
+                                    <li>Count as Minute, pay less</li>
+                                    <li>Pay as you go</li>
+                                </ul>
+                                <p>Pay as you go. Cheap!!</p>
+                                <hr/>
+                                <h3>$0.25 / minute</h3>
+                                <hr/>
+                                <p><button id="onDemond" class="btn btn-success btn-large"><i class="icon-ok"></i>Select plan</button></p>
+                            </div>
+                        </div>
+                        <div class="span1 col-md-6">
+                            <div class="well">
+                                <h2 class="text-warning">Flat Rate</h2>
 
-                                 <option>1</option>
-
+                                <p><span class="label label-success">POPULAR</span></p>
+                                <ul>
+                                    <li>Scalable</li>
+                                    <li>Unlimited access</li>
+                                    <li>24 hours</li>
+                                </ul>
+                                <p>Cheap As Well!!</p>
+                                <hr/>
+                                <h3>$250 / month</h3>
+                                <hr/>
+                                <p>
+                                    <button id="flatRate" class="btn btn-success btn-large"><i class="icon-ok"></i> Select plan</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 15px;">
+                            <label>Choose How Many You Want : </label>
+                            <select name="number">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Number</label>
-                            <input type="text"  class="form-control" id="number" name="number" placeholder="number"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Pricing</label>
-                            <input type="text"  class="form-control" id="job_title"  name="job_title" placeholder="job title"/>
+                           <input type="text"  id="plan" name="plan"/>
                         </div>
 
                         <div class="modal-footer">
@@ -185,5 +214,4 @@
 
   % include('templates/jslinks.tpl', title='Javascript Links')
 </body>
-
 </html>
