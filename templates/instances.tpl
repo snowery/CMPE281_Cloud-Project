@@ -26,11 +26,12 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
+                                    <div style="display: none;">Google Galaxy Nexus - 4.1.1 - API 16 - 720x1280</div>
                                     <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Google Galaxy Nexus</h3>
                                     <p>Android Version : 4.1.1</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 1024M / 16384M</p>
-                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Google Galaxy Nexus - 4.1.1 - API 16 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -43,11 +44,12 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
+                                    <div style="display: none;">HTC Evo - 4.2.2 - API 17 - 720x1280</div>
                                     <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">HTC Evo</h3>
                                     <p>Android Version : 4.2.2</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="HTC Evo - 4.2.2 - API 17 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -62,11 +64,12 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
+                                    <div style="display: none;">Motorola Moto X - 4.2.2 - API 17 - 720x1280</div>
                                     <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Motorola Moto X</h3>
                                     <p>Android Version : 4.2.2</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Motorola Moto X - 4.2.2 - API 17 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -79,11 +82,13 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
+                                    <div style="display: none;">Samsung Galaxy Note 2 - 4.2.2 - API 17 - 720x1280</div>
                                     <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Samsung Galaxy Note</h3>
                                     <p>Android Version : 4.2.2</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <p>Memory / Storge : 2048M / 16384M</p>
+                                    <a class="btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Samsung Galaxy Note 2 - 4.2.2 - API 17 - 720x1280" ><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -94,9 +99,15 @@
                 <div class="col-lg-13">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-
-                            <span ><button id="launchInstance" >Launch</button></span>
-                            <span><button>Action</button></span>
+                            <span><button class="btn btn-info" id="launchInstance" >Launch</button></span>
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a class="btn disabled" href="#">Power Off</a></li>
+                                <li><a class="btn disabled" href="#">Power On</a></li>
+                                <li><a class="btn disabled" href="#">Terminiate</a></li>
+                              </ul>
+                            </div>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -195,10 +206,9 @@
                             <select name="number">
                                 <option>1</option>
                                 <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
                             </select>
-                           <input type="text"  id="plan" name="plan"/>
+                            <input type="text" style="display: none"  id="plan" name="plan"/>
+                            <input type="text" style="display: none" id="vmName" name="vmName"/>
                         </div>
 
                         <div class="modal-footer">

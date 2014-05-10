@@ -1,6 +1,6 @@
 __author__ = 'Think'
 # import bottle_mysql
-from bottle import template, debug, static_file, url, route, run, install, get, post, request
+from bottle import template, debug, static_file, url, route, run, install, get, post, request, redirect
 import controller
 
 myController = controller.Controller("root", "root", "cmpe281")
@@ -45,12 +45,19 @@ def launch(uid):
     rate = 0.25
     plan = request.forms.get('plan')
     number = request.forms.get('number')
-    vm = request.forms.get('vm')
+    vmName = request.forms.get('vmName')
+    print(vmName)
+
     if plan == "1":
         rate = 250
-    for i in range(int(number)-1):
-       myController.order_instance(vm, uid, plan, rate) #what is vm
-    return template("templates/instances", get_url=url, instances=instances)
+
+    #vm = myController.get_idle_instances(vmName)
+
+    for i in range(0, int(number)):
+        print(i)
+       #myController.order_instance(vm, uid, plan, rate)
+    redirect("/"+str(uid)+"/instances")
+
 
 @get('/<uid:int>/instances/<vmid>/terminate')
 def terminate(uid, vmid):

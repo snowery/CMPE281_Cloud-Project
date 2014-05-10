@@ -14,4 +14,8 @@ $(function(){
         e.preventDefault();
         $('#plan').val('1');
     });
+    $('.select').click(function(){
+         $('#vmName').val($(this).attr('vmName'));
+    });
+
 });
