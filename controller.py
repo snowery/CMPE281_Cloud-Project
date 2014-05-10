@@ -92,11 +92,14 @@ class Controller:
         self.c.execute("select Uptime, LastStartTime, LastBillDate from orders where VmId = %s and VmStatus = 'A'", vm_id)
         timestamp = self.c.fetchone()
 
-        diff = (now - max(timestamp['LastStartTime'], timestamp['LastBillDate'])).seconds
+        diff = (now - timestamp['LastStartTime']).seconds
+        self.c.execute("update logs set EndTime = %s, Uptime = %s where VmId = %s and EndTime is NULL", (now, diff, vm_id))
 
+        if timestamp['LastStartTime'] < timestamp['LastBillDate']:
+            diff = (now - timestamp['LastBillDate']).seconds
         uptime = timestamp['Uptime'] + diff
         self.c.execute("update orders set Uptime = %s, VmStatus = 'S' where VmId = %s and VmStatus = 'A'", (uptime, vm_id))
-        self.c.execute("update logs set EndTime = %s, Uptime = %s where VmId = %s and EndTime is NULL", (now, diff, vm_id))
+
         self.db.commit()
 
     def terminate_instance(self, vm_id):

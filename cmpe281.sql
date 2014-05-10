@@ -34,11 +34,12 @@ CREATE TABLE `billing` (
   `Charge` decimal(10,2) NOT NULL,
   `Status` varchar(45) NOT NULL,
   `DueDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `PaidDate` datetime DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`BillId`),
   KEY `OrderId_idx` (`OrderId`),
   KEY `UserId_idx` (`UserId`),
   CONSTRAINT `OrderId` FOREIGN KEY (`OrderId`) REFERENCES `orders` (`OrderId`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +48,7 @@ CREATE TABLE `billing` (
 
 LOCK TABLES `billing` WRITE;
 /*!40000 ALTER TABLE `billing` DISABLE KEYS */;
-INSERT INTO `billing` VALUES (1,6,1,'2014-04-20 02:26:19','2014-04-20 11:59:50',0,0.12,6464,12.93,'A','0000-00-00 00:00:00'),(3,8,1,'2014-04-20 12:03:45','2014-04-20 12:05:00',0,0.11,75,0.14,'A','0000-00-00 00:00:00'),(4,8,1,'2014-04-20 12:05:00','2014-04-20 12:58:05',0,0.11,2666,4.89,'A','0000-00-00 00:00:00'),(7,11,1,'2014-05-09 18:47:04','2014-05-09 19:34:13',0,0.11,2660,4.88,'A','2014-05-29 19:34:14');
+INSERT INTO `billing` VALUES (1,6,1,'2014-04-20 02:26:19','2014-04-20 11:59:50',0,0.12,6464,12.93,'C','0000-00-00 00:00:00','2014-05-09 23:44:09'),(3,8,1,'2014-04-20 12:03:45','2014-04-20 12:05:00',0,0.11,75,0.14,'C','0000-00-00 00:00:00','2014-05-09 23:44:59'),(4,8,1,'2014-04-20 12:05:00','2014-04-20 12:58:05',0,0.11,2666,4.89,'C','0000-00-00 00:00:00','2014-05-09 23:44:59'),(7,11,1,'2014-05-09 18:47:04','2014-05-09 19:34:13',0,0.11,2660,4.88,'A','2014-05-29 19:34:14','0000-00-00 00:00:00'),(8,11,1,'2014-05-09 19:34:13','2014-05-09 23:18:57',0,0.11,7941,14.56,'A','2014-05-29 23:18:57','0000-00-00 00:00:00'),(9,11,1,'2014-05-09 23:18:57','2014-05-09 23:51:46',0,0.11,434,0.80,'A','2014-05-29 23:51:46','0000-00-00 00:00:00'),(10,12,1,'2014-05-09 23:46:38','2014-05-09 23:51:46',0,0.11,250,0.46,'A','2014-05-29 23:51:47','0000-00-00 00:00:00'),(11,11,1,'2014-05-09 23:51:46','2014-05-09 23:55:37',0,0.11,103,0.19,'A','2014-05-29 23:55:37','0000-00-00 00:00:00'),(12,12,1,'2014-05-09 23:51:46','2014-05-09 23:55:37',0,0.11,231,0.42,'A','2014-05-29 23:55:37','0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `billing` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,7 +100,7 @@ CREATE TABLE `instance` (
 
 LOCK TABLES `instance` WRITE;
 /*!40000 ALTER TABLE `instance` DISABLE KEYS */;
-INSERT INTO `instance` VALUES (9,'Nexus 7 - 4.4.2 - API 19 - 800x1280','lan@localhost',NULL,NULL),(10,'Custom Tablet 10 - 4.4.2 - API 19 - 1280x800','lan@localhost',NULL,NULL),(11,'Galaxy S2 - 4.1.1 - API 16 - 480x800','lan@localhost',NULL,NULL),(12,'Galaxy S3 - 4.3 - API 18 - 720x1280','lan@localhost',1,11);
+INSERT INTO `instance` VALUES (9,'Nexus 7 - 4.4.2 - API 19 - 800x1280','lan@localhost',1,12),(10,'Custom Tablet 10 - 4.4.2 - API 19 - 1280x800','lan@localhost',NULL,NULL),(11,'Galaxy S2 - 4.1.1 - API 16 - 480x800','lan@localhost',NULL,NULL),(12,'Galaxy S3 - 4.3 - API 18 - 720x1280','lan@localhost',1,11);
 /*!40000 ALTER TABLE `instance` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +121,7 @@ CREATE TABLE `logs` (
   PRIMARY KEY (`LogId`),
   KEY `OrderId_idx` (`OrderId`),
   KEY `VmId_idx` (`VmId`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,32 +130,8 @@ CREATE TABLE `logs` (
 
 LOCK TABLES `logs` WRITE;
 /*!40000 ALTER TABLE `logs` DISABLE KEYS */;
-INSERT INTO `logs` VALUES (1,11,12,'2014-05-09 18:47:04','2014-05-09 18:50:15',191),(2,11,12,'2014-05-09 18:51:38','2014-05-09 18:53:37',119),(3,11,12,'2014-05-09 18:55:03','2014-05-09 21:33:10',7137);
+INSERT INTO `logs` VALUES (1,11,12,'2014-05-09 18:47:04','2014-05-09 18:50:15',191),(2,11,12,'2014-05-09 18:51:38','2014-05-09 18:53:37',119),(3,11,12,'2014-05-09 18:55:03','2014-05-09 21:33:10',7137),(4,11,12,'2014-05-09 22:54:00','2014-05-09 22:55:27',87),(5,11,12,'2014-05-09 23:07:00','2014-05-09 23:25:09',1088),(6,12,9,'2014-05-09 23:46:38','2014-05-09 23:49:50',192),(7,11,12,'2014-05-09 23:50:43','2014-05-09 23:53:29',166),(8,12,9,'2014-05-09 23:50:48',NULL,NULL);
 /*!40000 ALTER TABLE `logs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `new_table`
---
-
-DROP TABLE IF EXISTS `new_table`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `new_table` (
-  `UserId` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  PRIMARY KEY (`UserId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `new_table`
---
-
-LOCK TABLES `new_table` WRITE;
-/*!40000 ALTER TABLE `new_table` DISABLE KEYS */;
-/*!40000 ALTER TABLE `new_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -176,7 +153,7 @@ CREATE TABLE `orders` (
   `UnitPrice` decimal(10,2) NOT NULL,
   `LastBillDate` datetime NOT NULL,
   PRIMARY KEY (`OrderId`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,8 +162,32 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,9,3,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',3294,'2014-04-20 02:23:23',0,0.12,'2014-04-20 01:25:00'),(1,9,6,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',0,'2014-04-20 10:58:50',0,0.12,'2014-04-20 11:59:50'),(1,9,8,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',0,'2014-04-20 12:54:33',0,0.11,'2014-04-20 12:58:05'),(1,12,11,'Galaxy S3 - 4.3 - API 18 - 720x1280','S',7137,'2014-05-09 18:55:03',0,0.11,'2014-05-09 19:34:13');
+INSERT INTO `orders` VALUES (1,9,3,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',3294,'2014-04-20 02:23:23',0,0.12,'2014-04-20 01:25:00'),(1,9,6,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',0,'2014-04-20 10:58:50',0,0.12,'2014-04-20 11:59:50'),(1,9,8,'Nexus 7 - 4.4.2 - API 19 - 800x1280','T',0,'2014-04-20 12:54:33',0,0.11,'2014-04-20 12:58:05'),(1,12,11,'Galaxy S3 - 4.3 - API 18 - 720x1280','S',0,'2014-05-09 23:50:43',0,0.11,'2014-05-09 23:55:37'),(1,9,12,'Nexus 7 - 4.4.2 - API 19 - 800x1280','A',0,'2014-05-09 23:50:48',0,0.11,'2014-05-09 23:55:37');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `UserId` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`UserId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -198,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-09 22:06:52
+-- Dump completed on 2014-05-09 23:58:23

@@ -6,8 +6,8 @@ from controller import Controller
 
 class Test:
     def __init__(self):
-        self.controller = Controller("root", '111111', "cmpe281")
-        self.bill = Billing("root", '111111', "cmpe281")
+        self.controller = Controller("root", 'root', "cmpe281")
+        self.bill = Billing("root", 'root', "cmpe281")
 
     def host(self):
 #        host = Host('user@host_ip', '/path/.ssh/id_rsa', '/Applications/Genymotion.app/Contents/MacOS/player')
@@ -16,7 +16,6 @@ class Test:
         print host.get_instances()
         print host.get_instance_status('Nexus 7 - 4.4.2 - API 19 - 800x1280')
         print host.get_running_instances()
-
 
     def controller_add_instances(self):
         host = self.controller.get_host("lan@localhost")
@@ -53,13 +52,21 @@ class Test:
     def get_bill_history(self, user_id):
         print self.bill.get_bill_history(user_id)
 
+    def get_instance_by_id(self, vm_id):
+        print self.controller.get_instance_by_id(vm_id)
 
-#Test().controller_order('Galaxy S3 - 4.3 - API 18 - 720x1280 - VM1')
+    def pay_bill(self, bill_id):
+        self.bill.pay_bill(bill_id)
+
+#Test().controller_order('Nexus 7 - 4.4.2 - API 19 - 800x1280')
 #Test().host()
 #Test().controller_get_instance_category()
-#Test().controller_launch(12)
-Test().controller_poweroff(12)
+#Test().controller_launch(9)
+#Test().controller_poweroff(12)
 #Test().controller_terminate(9)
-#Test().generate_reports()
+Test().generate_reports()
 #Test().get_bill_history(1)
 #Test().calc_bill(1)
+#Test().get_instance_by_id(12)
+#Test().pay_bill(3)
+#Test().pay_bill(4)
