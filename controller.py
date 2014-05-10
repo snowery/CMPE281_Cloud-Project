@@ -119,3 +119,25 @@ class Controller:
         """
         vm = self.get_instance_by_id(vm_id)
         return self.get_host(vm['Host']).get_instance_status(vm['VmName'])
+
+
+    def sign_up(self, email, password):
+        """
+        create a new user
+        """
+        self.c.execute("insert into user(email,password) values(%s, %s)", (email, password))
+        self.db.commit()
+        return self.c.lastrowid
+
+
+
+    def sign_in(self, email, password):
+        """
+        user sign in
+        """
+        result = self.c.execute("select UserId from user where email = %s and password = %s", (email, password))
+
+        if result:
+            return self.c.fetchone()['UserId']
+        else:
+            return False
