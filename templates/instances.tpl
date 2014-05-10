@@ -5,7 +5,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Genycloud</title>
+    <title>GenyCloud</title>
     % include('templates/csslinks.tpl', title='CSS Links')
 
 </head>
