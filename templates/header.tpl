@@ -238,17 +238,7 @@
                             <a href="/1/dashboard"><i class="fa fa-dashboard fa-fw"></i> OVERVIEW</a>
                         </li>
                         <li class="">
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> INSTANCE<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse" style="height: 0px;">
-                                <li>
-                                    <a href="/1/instances">Instances</a>
-                                </li>
-                                <li>
-                                    <a href="/1/instances/launch">Launch</a>
-                                </li>
-
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a href="/1/instances"><i class="fa fa-bar-chart-o fa-fw"></i> INSTANCE</a>
                         </li>
                         <li>
                             <a href="/1/usage"><i class="fa fa-table fa-fw"></i> USAGE</a>

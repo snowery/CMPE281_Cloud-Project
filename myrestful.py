@@ -1,6 +1,6 @@
 __author__ = 'Think'
 # import bottle_mysql
-from bottle import template, debug, static_file, url, route, run, install, get, post
+from bottle import template, debug, static_file, url, route, run, install, get, post, request, redirect
 import controller
 
 myController = controller.Controller("root", "", "cmpe281")
@@ -13,15 +13,22 @@ def home():
 
 @get('/<uid:int>/dashboard')
 def dashboard(uid):
-    return template("templates/dashboard", get_url=url)
+    instances = myController.get_instance_by_user(uid)
+    total = len(instances)
+    running = 0
+    for instance in instances:
+        if myController.get_instance_status(instance['VmId']) == 'running':
+            running += 1
+
+    logs = myController.get_log_by_user(uid)
+
+    return template("templates/dashboard", get_url=url, running=running, total=total, logs=logs)
 
 
 @get('/<uid:int>/instances')
 def instances(uid):
     instances = myController.get_instance_by_user(uid)
-    category = myController.get_instance_category()
-   # print("List "+category[0])
-    return template("templates/instances", get_url=url, instances=instances, ctry=category)
+    return template("templates/instances", get_url=url, instances=instances)
 
 @get('/<uid:int>/billing')
 def billing(uid):
@@ -33,10 +40,24 @@ def billing(uid):
 def login():
     return
 
-@get('/<uid:int>/instances/launch')
+@post('/<uid:int>/instances/launch')
 def launch(uid):
-    myController.order_instance()
-    return
+    rate = 0.25
+    plan = request.forms.get('plan')
+    number = request.forms.get('number')
+    vmName = request.forms.get('vmName')
+    print(vmName)
+
+    if plan == "1":
+        rate = 250
+
+    #vm = myController.get_idle_instances(vmName)
+
+    for i in range(0, int(number)):
+        print(i)
+       #myController.order_instance(vm, uid, plan, rate)
+    redirect("/"+str(uid)+"/instances")
+
 
 @get('/<uid:int>/instances/<vmid>/terminate')
 def terminate(uid, vmid):

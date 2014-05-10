@@ -89,3 +89,7 @@ class Billing():
 
         bills.append({'total unpaid': total})
         return bills
+
+    def pay_bill(self, bill_id):
+        self.c.execute("update billing set Status='C', PaidDate=%s where BillId = %s", (datetime.datetime.now(), bill_id))
+        self.db.commit()

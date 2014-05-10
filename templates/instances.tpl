@@ -14,7 +14,7 @@
         % include('templates/header.tpl', title='Page header and navigation')
         <div id="page-wrapper">
             <div class="row" id="chooseImage"  style="display:none ">
-                <div class="row">
+                <div class="row" style="margin-left: 15px;">
                     <h1>Choose Image</h1>
                 </div>
                 <div class="row">
@@ -26,11 +26,12 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
+                                    <div style="display: none;">Google Galaxy Nexus - 4.1.1 - API 16 - 720x1280</div>
                                     <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Google Galaxy Nexus</h3>
                                     <p>Android Version : 4.1.1</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 1024M / 16384M</p>
-                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Google Galaxy Nexus - 4.1.1 - API 16 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -43,11 +44,12 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
+                                    <div style="display: none;">HTC Evo - 4.2.2 - API 17 - 720x1280</div>
                                     <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">HTC Evo</h3>
                                     <p>Android Version : 4.2.2</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="HTC Evo - 4.2.2 - API 17 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -62,11 +64,12 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
+                                    <div style="display: none;">Motorola Moto X - 4.2.2 - API 17 - 720x1280</div>
                                     <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Motorola Moto X</h3>
                                     <p>Android Version : 4.2.2</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Motorola Moto X - 4.2.2 - API 17 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -79,11 +82,13 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
+                                    <div style="display: none;">Samsung Galaxy Note 2 - 4.2.2 - API 17 - 720x1280</div>
                                     <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Samsung Galaxy Note</h3>
                                     <p>Android Version : 4.2.2</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <p>Memory / Storge : 2048M / 16384M</p>
+                                    <a class="btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Samsung Galaxy Note 2 - 4.2.2 - API 17 - 720x1280" ><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -94,9 +99,15 @@
                 <div class="col-lg-13">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-
-                            <span ><button id="launchInstance" >Launch</button></span>
-                            <span><button>Action</button></span>
+                            <span><button class="btn btn-info" id="launchInstance" >Launch</button></span>
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a class="btn disabled" href="#">Power Off</a></li>
+                                <li><a class="btn disabled" href="#">Power On</a></li>
+                                <li><a class="btn disabled" href="#">Terminiate</a></li>
+                              </ul>
+                            </div>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -149,27 +160,55 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Launch a Instance</h4>
+                    <h2 class="modal-title" id="myModalLabel" style="text-align: center;">Select a Plan</h2>
                 </div>
                 <div class="modal-body">
-                    <form id="postJobForm1" action="" method="post"  role="form">
 
+                    <form id="lauchInstanceForm" action="/1/instances/launch" method="POST" >
+                         <div class="span1 col-md-6">
+                            <div class="well">
+                                <h2 class="text-warning">On Demond</h2>
 
-                        <div class="form-group">
-                            <label >Image</label>
-                            <select class="form-control">
+                                <p><span class="label label-success">POPULAR</span></p>
+                                <ul>
+                                    <li>Scalable</li>
+                                    <li>Count as Minute, pay less</li>
+                                    <li>Pay as you go</li>
+                                </ul>
+                                <p>Pay as you go. Cheap!!</p>
+                                <hr/>
+                                <h3>$0.25 / minute</h3>
+                                <hr/>
+                                <p><button id="onDemond" class="btn btn-success btn-large"><i class="icon-ok"></i>Select plan</button></p>
+                            </div>
+                        </div>
+                        <div class="span1 col-md-6">
+                            <div class="well">
+                                <h2 class="text-warning">Flat Rate</h2>
 
-                                 <option>1</option>
-
+                                <p><span class="label label-success">POPULAR</span></p>
+                                <ul>
+                                    <li>Scalable</li>
+                                    <li>Unlimited access</li>
+                                    <li>24 hours</li>
+                                </ul>
+                                <p>Cheap As Well!!</p>
+                                <hr/>
+                                <h3>$250 / month</h3>
+                                <hr/>
+                                <p>
+                                    <button id="flatRate" class="btn btn-success btn-large"><i class="icon-ok"></i> Select plan</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 15px;">
+                            <label>Choose How Many You Want : </label>
+                            <select name="number">
+                                <option>1</option>
+                                <option>2</option>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Number</label>
-                            <input type="text"  class="form-control" id="number" name="number" placeholder="number"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Pricing</label>
-                            <input type="text"  class="form-control" id="job_title"  name="job_title" placeholder="job title"/>
+                            <input type="text" style="display: none"  id="plan" name="plan"/>
+                            <input type="text" style="display: none" id="vmName" name="vmName"/>
                         </div>
 
                         <div class="modal-footer">
@@ -185,5 +224,4 @@
 
   % include('templates/jslinks.tpl', title='Javascript Links')
 </body>
-
 </html>
