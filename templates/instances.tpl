@@ -30,7 +30,7 @@
                                     <p>Android Version : 4.1.1</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 1024M / 16384M</p>
-                                    <a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                     <p>Android Version : 4.2.2</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                     <p>Android Version : 4.2.2</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                                     <p>Android Version : 4.2.2</p>
                                     <p>Screen Size : 720 X 1280</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class=" btn btn-default" data-toggle="modal" data-target="#myModal" href="#"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                            <span ><button id="launchInstance" data-toggle="modal" data-target="#myModal1">Launch</button></span>
+                            <span ><button id="launchInstance" >Launch</button></span>
                             <span><button>Action</button></span>
                         </div>
                         <!-- /.panel-heading -->
@@ -144,7 +144,7 @@
     <!-- /#wrapper -->
 
 
-   <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -158,20 +158,18 @@
                         <div class="form-group">
                             <label >Image</label>
                             <select class="form-control">
-                                 % for image in ctry:
-                                 <option>{{image}}</option>
-                                 % end
+
+                                 <option>1</option>
+
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Number</label> <input
-                                type="text"  class="form-control" id="number"
-                                name="number" placeholder="number"/>
+                            <label>Number</label>
+                            <input type="text"  class="form-control" id="number" name="number" placeholder="number"/>
                         </div>
                         <div class="form-group">
-                            <label>Pricing</label> <input
-                                type="text"  class="form-control" id="job_title"
-                                name="job_title" placeholder="job title"/>
+                            <label>Pricing</label>
+                            <input type="text"  class="form-control" id="job_title"  name="job_title" placeholder="job title"/>
                         </div>
 
                         <div class="modal-footer">
@@ -182,7 +180,7 @@
                 </div>
             </div>
         </div>-
-    </div>-->
+    </div>
 
 
   % include('templates/jslinks.tpl', title='Javascript Links')

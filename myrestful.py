@@ -3,7 +3,7 @@ __author__ = 'Think'
 from bottle import template, debug, static_file, url, route, run, install, get, post
 import controller
 
-myController = controller.Controller("root", "111111", "cmpe281")
+myController = controller.Controller("root", "root", "cmpe281")
 
 #REST URL Mapping
 @get('/')
