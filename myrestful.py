@@ -116,13 +116,19 @@ def launch(uid):
 @get('/<uid:int>/instances/<vmid>/terminate')
 def terminate(uid, vmid):
     myController.terminate_instance()
-    return
+    return "terminate"
 
 
 
 @get('/<uid:int>/instances/<vmid>/poweron')
 def poweron(uid, vmid):
     myController.launch_instance(vmid)
+    return "poweron"
+
+@get('/<uid:int>/instances/<vmid>/poweroff')
+def poweron(uid, vmid):
+    myController.poweroff_instance(vmid)
+    return "poweroff"
 
 @get('/<uid:int>/usage')
 def usage(uid):

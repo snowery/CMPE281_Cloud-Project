@@ -102,9 +102,9 @@
                             <div class="btn-group">
                               <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
                               <ul class="dropdown-menu" role="menu">
-                                <li><a class="btn disabled" href="#">Power Off</a></li>
-                                <li><a class="btn disabled" href="#">Power On</a></li>
-                                <li><a class="btn disabled" href="#">Terminiate</a></li>
+                                <li><a id="powerOff" class="btn disabled vmOperation"  href="#">Power Off</a></li>
+                                <li><a id="powerOn" class="btn disabled vmOperation" href="#">Power On</a></li>
+                                <li><a id="terminate" class="btn disabled vmOperation" href="#">Terminate</a></li>
                               </ul>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                                 <table class="table" style="text-align: left;">
                                     <thead>
                                         <tr>
-                                            <th><input type="checkbox" name="checkbox"/></th>
+                                            <th><input class="checkbox"  id="checkAll" type="checkbox" name="checkbox"/></th>
                                             <th>name</th>
                                             <th>Instance ID</th>
                                             <th>Instance State</th>
@@ -125,7 +125,7 @@
                                     <tbody>
                                         % for instance in instances:
                                         <tr class="success">
-                                            <td><input type="checkbox" name="checkbox"/></td>
+                                            <td><input class="checkbox" vmId="{{instance['VmId']}}" type="checkbox" name="checkbox"/></td>
                                             <td>{{instance['VmName']}}</td>
                                             <td style="padding-left: 35px;">{{instance['VmId']}}</td>
                                             <td style="padding-left: 45px;">{{instance['VmStatus']}}</td>
@@ -133,6 +133,22 @@
                                             <td style="padding-left: 35px;">{{instance['RatePlan']}}</td>
                                         </tr>
                                         % end
+                                         <!--<tr class="success">-->
+                                            <!--<td><input class="checkbox" vmId="11" type="checkbox" name="checkbox"/></td>-->
+                                            <!--<td>1</td>-->
+                                            <!--<td style="padding-left: 35px;">11</td>-->
+                                            <!--<td style="padding-left: 45px;">1</td>-->
+                                            <!--<td>1</td>-->
+                                            <!--<td style="padding-left: 35px;">1</td>-->
+                                        <!--</tr>-->
+                                         <!--<tr class="success">-->
+                                            <!--<td><input class="checkbox" vmId="12" type="checkbox" name="checkbox"/></td>-->
+                                            <!--<td>1</td>-->
+                                            <!--<td style="padding-left: 35px;">12</td>-->
+                                            <!--<td style="padding-left: 45px;">1</td>-->
+                                            <!--<td>1</td>-->
+                                            <!--<td style="padding-left: 35px;">1</td>-->
+                                        <!--</tr>-->
                                     </tbody>
                                 </table>
 
