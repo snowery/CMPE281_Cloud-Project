@@ -66,7 +66,7 @@ class Controller:
         """
         given (vm_id, vm_name, host_string) and user id, launch instance
         """
-        self.launch_instance(vm['VmId'])
+
         now = datetime.datetime.now().isoformat()
         sql = "insert into orders(UserId, VmId, VmName, VmStatus, Uptime, LastStartTime, RatePlan, UnitPrice, LastBillDate) "+ \
                "values (%s, %s, '%s', '%s', %s, '%s', %s, %s, '%s')" % \
@@ -77,6 +77,8 @@ class Controller:
 
         self.c.execute("update instance set ReservedBy = %s, OrderId = %s where VmId = %s", (user_id, order_id, vm['VmId']))
         self.db.commit()
+
+        self.launch_instance(vm['VmId'])
 
 
     def launch_instance(self, vm_id):

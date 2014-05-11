@@ -3,7 +3,7 @@ from decimal import Decimal
 __author__ = 'lan'
 import MySQLdb
 from MySQLdb import cursors
-from datetime import datetime
+import datetime
 
 
 class Billing():
