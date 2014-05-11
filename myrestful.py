@@ -27,7 +27,7 @@ def dashboard(uid):
 
 @get('/<uid:int>/instances')
 def instances(uid):
-    instances = myController.get_instance_by_user(uid)
+    instances = myController.get_instance_by_uid(uid)
     return template("templates/instances", get_url=url, instances=instances)
 
 @get('/<uid:int>/billing')
@@ -46,16 +46,15 @@ def launch(uid):
     plan = request.forms.get('plan')
     number = request.forms.get('number')
     vmName = request.forms.get('vmName')
-    print(vmName)
+    #print(vmName)
 
     if plan == "1":
         rate = 250
 
-    #vm = myController.get_idle_instances(vmName)
-
-    for i in range(0, int(number)):
-        print(i)
-       #myController.order_instance(vm, uid, plan, rate)
+    vm = myController.get_idle_instances("Nexus 7 - 4.4.2 - API 19 - 800x1280")
+    #launch multi VMs
+    #for i in range(0, int(number)):
+    myController.order_instance(vm[0], uid, plan, rate)
     redirect("/"+str(uid)+"/instances")
 
 

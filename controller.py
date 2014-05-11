@@ -37,6 +37,13 @@ class Controller:
         self.c.execute("select VmId, VmName, Host from instance where ReservedBy = %s", user_id)
         return self.c.fetchall()
 
+    def get_instance_by_uid(self, user_id):
+        """
+        return instances reserved by user id
+        """
+        self.c.execute("select *  from orders where VmStatus <> 'T' ")
+        return self.c.fetchall()
+
     def get_idle_instances(self, vm_name):
         """
         return a list of unreserved instances by vm_name

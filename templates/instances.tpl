@@ -112,16 +112,15 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table" style="text-align: left;">
                                     <thead>
                                         <tr>
                                             <th><input type="checkbox" name="checkbox"/></th>
                                             <th>name</th>
                                             <th>Instance ID</th>
-                                            <th>Instance Type</th>
                                             <th>Instance State</th>
                                             <th>Launch Time</th>
-                                            <th>Host Name</th>
+                                            <th>Rate Plan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -129,11 +128,10 @@
                                         <tr class="success">
                                             <td><input type="checkbox" name="checkbox"/></td>
                                             <td>{{instance['VmName']}}</td>
-                                            <td>{{instance['VmId']}}</td>
-                                            <td>Android</td>
-                                            <td>2011-1-1</td>
-                                            <td>111</td>
-                                            <td>@mdo</td>
+                                            <td style="padding-left: 35px;">{{instance['VmId']}}</td>
+                                            <td style="padding-left: 45px;">{{instance['VmStatus']}}</td>
+                                            <td>{{instance['LastStartTime']}}</td>
+                                            <td style="padding-left: 35px;">{{instance['RatePlan']}}</td>
                                         </tr>
                                         % end
                                     </tbody>
