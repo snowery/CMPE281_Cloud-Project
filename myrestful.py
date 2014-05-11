@@ -51,7 +51,7 @@ def launch(uid):
     if plan == "1":
         rate = 250
 
-    vm = myController.get_idle_instances("Nexus 7 - 4.4.2 - API 19 - 800x1280")
+    vm = myController.get_idle_instances(vmName)
     #launch multi VMs
     #for i in range(0, int(number)):
     myController.order_instance(vm[0], uid, plan, rate)
