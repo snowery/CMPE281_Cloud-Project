@@ -161,7 +161,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form id="lauchInstanceForm" action="/1/instances/launch" method="POST" >
+                    <form id="lauchInstanceForm" >
                          <div class="span1 col-md-6">
                             <div class="well">
                                 <h2 class="text-warning">On Demond</h2>
@@ -210,7 +210,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <input id="post" type="submit" value="Launch" class="btn btn-primary"/>
+                            <input id="launch" type="submit" value="Launch" class="btn btn-primary"/>
                         </div>
                     </form>
                 </div>

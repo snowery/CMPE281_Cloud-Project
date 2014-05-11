@@ -6,8 +6,8 @@ from controller import Controller
 
 class Test:
     def __init__(self):
-        self.controller = Controller("root", 'root', "cmpe281")
-        self.bill = Billing("root", 'root', "cmpe281")
+        self.controller = Controller("root", 'root', "cmpe2811")
+        self.bill = Billing("root", 'root', "cmpe2811")
 
     def host(self):
 #        host = Host('user@host_ip', '/path/.ssh/id_rsa', '/Applications/Genymotion.app/Contents/MacOS/player')
@@ -18,7 +18,7 @@ class Test:
         print host.get_running_instances()
 
     def controller_add_instances(self):
-        host = self.controller.get_host("lan@localhost")
+        host = self.controller.get_host("lan@172.20.10.2")
         self.controller.add_instances(host)
 
     def controller_get_instance_category(self):
@@ -65,11 +65,12 @@ class Test:
 #Test().host()
 #Test().controller_get_instance_category()
 #Test().controller_launch(9)
-#Test().controller_poweroff(11)
+Test().controller_poweroff(14)
 #Test().controller_terminate(9)
 #Test().generate_reports()
 #Test().get_bill_history(1)
 #Test().calc_bill(1)
 #Test().get_instance_by_id(12)
 #Test().pay_bill(3)
-Test().get_log(1)
+#Test().get_log(1)
+#Test().controller_add_instances()

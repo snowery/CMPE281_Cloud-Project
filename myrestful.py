@@ -3,7 +3,7 @@ __author__ = 'Think'
 from bottle import template, debug, static_file, url, route, run, install, get, post, request, redirect
 import controller
 
-myController = controller.Controller("root", "", "cmpe281")
+myController = controller.Controller("root", "root", "cmpe2811")
 
 #REST URL Mapping
 @get('/')
@@ -46,16 +46,18 @@ def launch(uid):
     plan = request.forms.get('plan')
     number = request.forms.get('number')
     vmName = request.forms.get('vmName')
-    #print(vmName)
+    print(vmName)
 
     if plan == "1":
         rate = 250
 
+    #for testing
+    #vm = myController.get_idle_instances("Nexus 7 - 4.4.2 - API 19 - 800x1280")
     vm = myController.get_idle_instances(vmName)
     #launch multi VMs
     #for i in range(0, int(number)):
-    myController.order_instance(vm[0], uid, plan, rate)
-    redirect("/"+str(uid)+"/instances")
+    myController.order_instance(vm[0], uid, int(plan), float(rate))
+    #redirect("/"+str(uid)+"/instances")
 
 
 @get('/<uid:int>/instances/<vmid>/terminate')
