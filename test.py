@@ -6,8 +6,8 @@ from controller import Controller
 
 class Test:
     def __init__(self):
-        self.controller = Controller("root", 'root', "cmpe2811")
-        self.bill = Billing("root", 'root', "cmpe2811")
+        self.controller = Controller("root", 'root', "cmpe281")
+        self.bill = Billing("root", 'root', "cmpe281")
 
 
     def host(self):
@@ -67,12 +67,12 @@ class Test:
 #Test().controller_order('LG Optimus L3 II - 4.1.1 - API 16 - 240x320')
 #Test().host()
 #Test().controller_get_instance_category()
-#Test().controller_poweroff(9)
+Test().controller_poweroff(9)
 #Test().controller_launch(9)
 #Test().controller_poweroff(14)
 #Test().controller_terminate(9)
 #Test().generate_reports()
-Test().get_bill_history(1)
+#Test().get_bill_history(1)
 #Test().calc_bill(1)
 #Test().get_instance_by_id(12)
 #Test().pay_bill(3)
