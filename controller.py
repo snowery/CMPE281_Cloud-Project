@@ -5,7 +5,7 @@ import threading
 from MySQLdb import cursors
 from host import Host
 from billing import Billing
-
+from time import sleep
 
 
 class Controller:
@@ -89,50 +89,76 @@ class Controller:
         vm_name = vm['VmName']
         thread = threading.Thread(target=Host.launch, args=(h, vm_name))
         thread.start()
-
         now = datetime.datetime.now()
-        self.c.execute("select OrderId from instance where VmId = %s", vm_id)
-        order_id = self.c.fetchone()['OrderId']
-        self.c.execute("update orders set LastStartTime = %s, VmStatus = 'A' where VmId = %s and VmStatus = 'S'", (now, vm_id))
-        self.c.execute("insert into logs(VmId, OrderId, StartTime, EndTime, Uptime) values (%s, %s, %s, null, null)", (vm_id, order_id, now))
-        self.db.commit()
-        if thread.is_alive():
-            print "launching..."
+
+        while h.get_instance_status(vm_name) != "running":
+            print "Launch in process..."
+            sleep(3)
+
+        status = h.get_instance_status(vm_name)
+        print "Check status:" + status
+        if status == "running":
+            self.c.execute("select OrderId from instance where VmId = %s", vm_id)
+            order_id = self.c.fetchone()['OrderId']
+            self.c.execute("update orders set LastStartTime = %s, VmStatus = 'A' where VmId = %s and VmStatus = 'S'", (now, vm_id))
+            self.c.execute("insert into logs(VmId, OrderId, StartTime, EndTime, Uptime) values (%s, %s, %s, null, null)", (vm_id, order_id, now))
+            self.db.commit()
+            print vm_name + " is running ", vm_id
             return True
+        else:
+            print vm_name + "  launch failure ", vm_id
+            return False
 
     def poweroff_instance(self, vm_id):
         """
         power off vm and update the log
         """
         vm = self.get_instance_by_id(vm_id)
-        self.get_host(vm['Host']).poweroff(vm['VmName'])
+        h = self.get_host(vm['Host'])
+        vm_name = vm['VmName']
+        h.poweroff(vm_name)
         now = datetime.datetime.now()
-        self.c.execute("select Uptime, LastStartTime, LastBillDate from orders where VmId = %s and VmStatus = 'A'", vm_id)
-        timestamp = self.c.fetchone()
 
-        diff = (now - timestamp['LastStartTime']).seconds
-        self.c.execute("update logs set EndTime = %s, Uptime = %s where VmId = %s and EndTime is NULL", (now, diff, vm_id))
+        while h.get_instance_status(vm_name) != "powered off":
+            print "Power off in process..."
+            sleep(3)
 
-        if timestamp['LastStartTime'] < timestamp['LastBillDate']:
-            diff = (now - timestamp['LastBillDate']).seconds
-        uptime = timestamp['Uptime'] + diff
-        self.c.execute("update orders set Uptime = %s, VmStatus = 'S' where VmId = %s and VmStatus = 'A'", (uptime, vm_id))
+        status = h.get_instance_status(vm_name)
+        print "Check status:" + status
+        if status == "powered off":
+            self.c.execute("select Uptime, LastStartTime, LastBillDate from orders where VmId = %s and VmStatus = 'A'", vm_id)
+            timestamp = self.c.fetchone()
 
-        self.db.commit()
+            diff = (now - timestamp['LastStartTime']).seconds
+            self.c.execute("update logs set EndTime = %s, Uptime = %s where VmId = %s and EndTime is NULL", (now, diff, vm_id))
+
+            if timestamp['LastStartTime'] < timestamp['LastBillDate']:
+                diff = (now - timestamp['LastBillDate']).seconds
+            uptime = timestamp['Uptime'] + diff
+            self.c.execute("update orders set Uptime = %s, VmStatus = 'S' where VmId = %s and VmStatus = 'A'", (uptime, vm_id))
+
+            self.db.commit()
+            print vm_name + " is powered off ", vm_id
+            return True
+        else:
+            print vm_name + "  powered off failure ", vm_id
+            return False
 
     def terminate_instance(self, vm_id):
         """
         generate the final bill for this order and power off the instance
         """
-        if self.get_instance_status(vm_id) != "powered off":
-            self.poweroff_instance(vm_id)
-        self.c.execute("select OrderId from orders where VmId = %s and VmStatus = 'S'", vm_id)
-        order_id = int(self.c.fetchone()['OrderId'])
-        Billing(self.user_name, self.password, self.db_name).generate_report_by_id(order_id)
+        if self.get_instance_status(vm_id) == "powered off" or self.poweroff_instance(vm_id):
+            self.c.execute("select OrderId from orders where VmId = %s and VmStatus = 'S'", vm_id)
+            order_id = int(self.c.fetchone()['OrderId'])
+            Billing(self.user_name, self.password, self.db_name).generate_report_by_id(order_id)
 
-        self.c.execute("update orders set VmStatus = 'T' where OrderId = %s", order_id)
-        self.c.execute("update instance set ReservedBy = null, OrderId = null where VmId = %s", vm_id)
-        self.db.commit()
+            self.c.execute("update orders set VmStatus = 'T' where OrderId = %s", order_id)
+            self.c.execute("update instance set ReservedBy = null, OrderId = null where VmId = %s", vm_id)
+            self.db.commit()
+            return True
+        else:
+            return False
 
     def get_instance_status(self, vm_id):
         """
