@@ -84,15 +84,15 @@ def login():
     password = request.forms.get('password')
     uid = myController.sign_in(email,password)
     s = bottle.request.environ.get('beaker.session')
-    s['uid'] = uid
-    s.save()
  
     if uid != 0:
         #helper(uid)
+        s['uid'] = uid
+        s.save()
         instances = myController.get_instance_by_uid(uid)
         return template("templates/instances", get_url=url, instances=instances)
     else:
-        print 'error'
+        print static_file("landing.html", root="static/html") 
     return
 
 
@@ -104,13 +104,15 @@ def signup():
     email = request.forms.get('email')
     password = request.forms.get('password')
     uid = myController.sign_up(email,password)
+    s = bottle.request.environ.get('beaker.session')
     
     if uid != 0:
-        #helper(uid)
+        s['uid'] = uid
+        s.save()        
         instances = myController.get_instance_by_uid(uid)
         return template("templates/instances", get_url=url, instances=instances)
     else:
-        print 'error'
+        print static_file("landing.html", root="static/html") 
     return
 
 
