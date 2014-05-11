@@ -42,20 +42,28 @@ def login():
 
 @post('/<uid:int>/instances/launch')
 def launch(uid):
+
     rate = 0.25
     plan = request.forms.get('plan')
     number = request.forms.get('number')
     vmName = request.forms.get('vmName')
     print(vmName)
+    print number
+    print plan
+
 
     if plan == "1":
         rate = 250
+   #uid = 1
+    #plan = "1"
 
-    #vm = myController.get_idle_instances(vmName)
-
-    for i in range(0, int(number)):
-        print(i)
-       #myController.order_instance(vm, uid, plan, rate)
+    vm = myController.get_idle_instances("dev_01")
+    #for i in range(0, int(number)):
+       # print(i)
+    print ("vvvv    == " + uid)
+   # myController.terminate_instance(14)   
+   # myController.order_instance(vm, int(uid), int(plan), rate)
+    myController.order_instance(vm, 1, 1, 1)
     redirect("/"+str(uid)+"/instances")
 
 
