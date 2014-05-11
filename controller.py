@@ -1,6 +1,7 @@
 __author__ = 'lan'
 import MySQLdb
 import datetime
+import threading
 from MySQLdb import cursors
 from host import Host
 from billing import Billing
@@ -83,7 +84,10 @@ class Controller:
         power on vm and create a new log
         """
         vm = self.get_instance_by_id(vm_id)
-        self.get_host(vm['Host']).launch(vm['VmName'])
+        h = self.get_host(vm['Host'])
+        vm_name = vm['VmName']
+        thread = threading.Thread(target=Host.launch, args=(h, vm_name))
+        thread.start()
 
         now = datetime.datetime.now()
         self.c.execute("select OrderId from instance where VmId = %s", vm_id)
@@ -91,6 +95,9 @@ class Controller:
         self.c.execute("update orders set LastStartTime = %s, VmStatus = 'A' where VmId = %s and VmStatus = 'S'", (now, vm_id))
         self.c.execute("insert into logs(VmId, OrderId, StartTime, EndTime, Uptime) values (%s, %s, %s, null, null)", (vm_id, order_id, now))
         self.db.commit()
+        if thread.is_alive():
+            print "lauching..."
+            return True
 
     def poweroff_instance(self, vm_id):
         """
@@ -131,7 +138,8 @@ class Controller:
         return instance status: "running" or "powered off"
         """
         vm = self.get_instance_by_id(vm_id)
-        return self.get_host(vm['Host']).get_instance_status(vm['VmName'])
+        self.c.execute("select VmStatus from orders where OrderId = (select OrderId from instance where VmId = %s)", vm_id)
+        return "running" if self.c.fetchone()['VmStatus'] == 'A' else "powered off"
 
     def get_log_by_user(self, user_id):
         self.c.execute("select * from logs where OrderId in (select OrderId from orders where UserId = %s and VmStatus <> 'T') order by LogId desc", user_id)
