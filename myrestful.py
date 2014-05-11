@@ -54,6 +54,18 @@ def bill_detail(uid, date):
     detail = billingDao.get_paid_bill_detail(uid, date)
     return template("templates/bill_detail", get_url=url, detail=detail)
 
+@post('/<uid:int>/pay_bill')
+def pay_bill(uid):
+    try:
+        bill_ids = request.forms.get('bill_ids')
+        print(bill_ids)
+        billingDao.pay_bill(bill_ids.split(','))
+        return 'ok'
+    except Exception, e:
+        print e
+        return ''
+
+
 #################unimplemented#######################
 """
 seperated helper function is not working
