@@ -66,7 +66,6 @@ class Controller:
         """
         given (vm_id, vm_name, host_string) and user id, launch instance
         """
-
         now = datetime.datetime.now().isoformat()
         sql = "insert into orders(UserId, VmId, VmName, VmStatus, Uptime, LastStartTime, RatePlan, UnitPrice, LastBillDate) "+ \
                "values (%s, %s, '%s', '%s', %s, '%s', %s, %s, '%s')" % \
@@ -98,7 +97,7 @@ class Controller:
         self.c.execute("insert into logs(VmId, OrderId, StartTime, EndTime, Uptime) values (%s, %s, %s, null, null)", (vm_id, order_id, now))
         self.db.commit()
         if thread.is_alive():
-            print "lauching..."
+            print "launching..."
             return True
 
     def poweroff_instance(self, vm_id):

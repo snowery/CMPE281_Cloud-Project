@@ -53,9 +53,11 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <h4><a href="/1/instances">Instances</a>: Running {{running}}, Total {{total}}</h4><br/>
-                            <button>Launch Instance</button>
-                            <div>Plan</div>
+                            <h3><a href="/1/instances">Instances
+                            </a></h3> <h4><span style="padding-left: 100px">Running <div class="badge alert-danger" style="font-size:x-large">{{running}}</div></span>
+                                <span style="padding-left: 20px">Total <div class="badge alert-success" style="font-size:x-large">{{total}}</div></span></h4><br/>
+
+                            <button class="btn btn-info" id="launchInstance">Launch Instance</button>
                         </div>
                         <!-- /.panel-body -->
                     </div>

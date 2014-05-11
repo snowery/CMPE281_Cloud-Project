@@ -7,6 +7,7 @@ import bottle
 import controller
 import billing
 
+
 session_opts = {
     'session.type': 'file',
     'session.cookie_expires': 300,
@@ -15,9 +16,8 @@ session_opts = {
 }
 app = SessionMiddleware(bottle.app(), session_opts)
 
-
-myController = controller.Controller("root", "", "cmpe281")
-billingDao = billing.Billing("root", "", "cmpe281")
+myController = controller.Controller("root", "root", "cmpe281")
+billingDao = billing.Billing("root", "root", "cmpe281")
 
 #REST URL Mapping
 @get('/')
