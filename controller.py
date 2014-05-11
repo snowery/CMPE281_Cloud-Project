@@ -164,7 +164,7 @@ class Controller:
         if result:
             return self.c.fetchone()['UserId']
         else:
-            return False
+            return 0
 
     def user_update(self, uid, password):        
         """

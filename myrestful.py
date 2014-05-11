@@ -4,8 +4,8 @@ from bottle import template, debug, static_file, url, route, run, install, get, 
 import controller
 import billing
 
-myController = controller.Controller("root", "root", "cmpe281")
-billingDao = billing.Billing("root", "root", "cmpe281")
+myController = controller.Controller("root", "", "cmpe281")
+billingDao = billing.Billing("root", "", "cmpe281")
 
 #REST URL Mapping
 @get('/')
@@ -46,6 +46,15 @@ def bill_detail(uid, date):
 
 @post('/login')
 def login():
+    email = request.forms.get('email')
+    password = request.forms.get('password')
+    rt = myController.sign_in(email,password)
+    print rt
+    if rt != 0:
+        #instances(rt)
+        webbrowser.open('http://localhost.com:8080/' + rt + '/instances')
+    else:
+        print 'error'
     return
 
 @post('/<uid:int>/instances/launch')
