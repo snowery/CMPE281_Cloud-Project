@@ -15,7 +15,11 @@ class Host:
 
     def exe_cmd(self, cmd):
         with hide('output','running','warnings'), settings(warn_only=True):
-            return run(cmd)
+            try:
+                return run(cmd)
+            except Exception, e:
+                print "Caught exception: ", e.message
+                self.exe_cmd(cmd)
 
     def launch(self, vm_name):
         self.exe_cmd(self.player_path + ' --vm-name "' + vm_name + '"')
