@@ -56,7 +56,7 @@ def bill_detail(uid, date):
 
 #################unimplemented#######################
 """
-helper function is not working
+seperated helper function is not working
 """
 def helper(uid):
     print uid
@@ -65,6 +65,9 @@ def helper(uid):
 
 @post('/login')
 def login():
+    """
+    user log in
+    """
     email = request.forms.get('email')
     password = request.forms.get('password')
     uid = myController.sign_in(email,password)
@@ -79,6 +82,14 @@ def login():
     else:
         print 'error'
     return
+
+def logout('logout'):
+    """
+    user log out
+    """
+    s = bottle.request.environ.get('beaker.session')
+    s.delete()
+    return static_file("landing.html", root="static/html") 
 
 @post('/<uid:int>/instances/launch')
 def launch(uid):
