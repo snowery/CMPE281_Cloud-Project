@@ -3,7 +3,7 @@ from decimal import Decimal
 __author__ = 'lan'
 import MySQLdb
 from MySQLdb import cursors
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 class Billing():
@@ -40,7 +40,7 @@ class Billing():
         self.c.execute("select RatePlan, UnitPrice, Uptime, LastStartTime, VmStatus, VmId, LastBillDate, UserId from orders where OrderId = %s", order_id)
         order = self.c.fetchone()
         uptime = order['Uptime']
-        now = datetime.datetime.now()
+        now = datetime.now()
         if order['VmStatus'] == 'A':
             begin = max(order['LastStartTime'], order['LastBillDate'])
             uptime += (now - begin).seconds
@@ -59,7 +59,7 @@ class Billing():
         generate reports for one order
         """
         bill = self.calc_bill_by_id(order_id)
-        due = datetime.datetime.now() + datetime.timedelta(days=20)
+        due = datetime.now() + timedelta(days=20)
         self.c.execute("insert into billing(OrderId, UserId, StartTime, EndTime, Plan, UnitPrice, Uptime, Charge, DueDate, Status) "+\
                        "values (%s, %s, '%s', '%s', %s, %s, %s, %s, '%s', 'A')" % \
                        (bill['order_id'], bill['user_id'], bill['from'], bill['to'], bill['plan'], bill['unit price'], bill['uptime'], bill['fee'], due))

@@ -32,7 +32,12 @@ class Host:
         return instances
 
     def get_instance_status(self, vm_name):
-        return self.get_instances()[vm_name].split('(')[0][:-1]
+        try:
+            return self.get_instances()[vm_name].split('(')[0][:-1]
+        except Exception, e:
+            print "Caught exception: ", e.message
+            self.get_instance_status(vm_name)
+
 
     def get_running_instances(self):
         lists = self.exe_cmd("VBoxManage list runningvms").split('\n')
