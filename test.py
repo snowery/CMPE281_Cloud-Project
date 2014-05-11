@@ -77,5 +77,9 @@ Test().controller_poweroff(9)
 #Test().get_instance_by_id(12)
 #Test().pay_bill(3)
 #Test().get_log(1)
+
 #Test().controller_add_instances()
 #Test().get_log(1)
+
+Test().controller_add_instances()
+>>>>>>> 1.add power on function

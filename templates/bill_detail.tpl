@@ -40,7 +40,7 @@
                     </thead>
                     <tbody>
                     % for item in detail['SubItems']:
-                    <tr>
+                    <tr bill_id="{{item['BillId']}}">
                         <td class="col-md-9"><em>{{item['VmName']}}</em></h4></td>
                         <td class="col-md-1" style="text-align: center">
                             <span class="badge alert-success">
@@ -99,9 +99,29 @@
 
     <div style="text-align: right">
         % if not detail['IsPaid']:
-        <button type="button" class="btn btn-success">
+        <button type="button" class="btn btn-success" id="btnPayBill">
             Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
         </button>
+        <script>
+            $(function(){
+                $('#btnPayBill').click(function() {
+                    var bill_ids = [];
+                    $("tr[bill_id]").each(function(){
+                        bill_ids.push($(this).attr('bill_id'));
+                    });
+
+                    var user_id = 1;
+                    var url = '/' + user_id + '/pay_bill';
+                    $.post(url, {'bill_ids':bill_ids.join()}, function(result){
+                        if(result=='ok') {
+                            $('#btnPayBill').hide();
+                        } else {
+                            alert('Payment Error!');
+                        }
+                    });
+                });
+            })
+        </script>
         % end
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>

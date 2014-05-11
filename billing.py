@@ -94,9 +94,9 @@ class Billing():
 
     def get_paid_bill_detail(self, user_id, paid_date):
         if paid_date == '---':
-            self.c.execute("select o.VmName, b.Plan, b.UnitPrice, round(b.Uptime/60,1) Uptime, b.Charge from billing as b inner join orders as o on b.OrderId = o.OrderId where b.UserId = %s and b.Status='A'", user_id)
+            self.c.execute("select b.BillId, o.VmName, b.Plan, b.UnitPrice, round(b.Uptime/60,1) Uptime, b.Charge from billing as b inner join orders as o on b.OrderId = o.OrderId where b.UserId = %s and b.Status='A'", user_id)
         else:
-            self.c.execute("select o.VmName, b.Plan, b.UnitPrice, round(b.Uptime/60,1) Uptime, b.Charge from billing as b inner join orders as o on b.OrderId = o.OrderId where b.UserId = %s and b.PaidDate=%s", (user_id, paid_date))
+            self.c.execute("select b.BillId, o.VmName, b.Plan, b.UnitPrice, round(b.Uptime/60,1) Uptime, b.Charge from billing as b inner join orders as o on b.OrderId = o.OrderId where b.UserId = %s and b.PaidDate=%s", (user_id, paid_date))
 
         sub_items = self.c.fetchall()
         total = 0.0
@@ -113,8 +113,12 @@ class Billing():
                        'IsPaid': (paid_date != '---')}
         return bill_detail
 
-    def pay_bill(self, bill_id):
-        self.c.execute("update billing set Status='C', PaidDate=%s where BillId = %s", (datetime.datetime.now(), bill_id))
+    def pay_bill(self, bill_ids):
+        format_strings = ','.join(['%s'] * len(bill_ids))
+        params = []
+        params.append(datetime.now())
+        params.extend(bill_ids)
+        self.c.execute("update billing set Status='C', PaidDate=%s where BillId in (" + format_strings + ")", tuple(params))
         self.db.commit()
 
     def get_bills_by_user(self, user_id):
