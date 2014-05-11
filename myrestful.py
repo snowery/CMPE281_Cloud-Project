@@ -1,8 +1,20 @@
 __author__ = 'Think'
 # import bottle_mysql
 from bottle import template, debug, static_file, url, route, run, install, get, post, request, redirect
+from beaker.middleware import SessionMiddleware
+import webbrowser
+import bottle
 import controller
 import billing
+
+session_opts = {
+    'session.type': 'file',
+    'session.cookie_expires': 300,
+    'session.data_dir': './data',
+    'session.auto': True
+}
+app = SessionMiddleware(bottle.app(), session_opts)
+
 
 myController = controller.Controller("root", "", "cmpe281")
 billingDao = billing.Billing("root", "", "cmpe281")
@@ -43,16 +55,27 @@ def bill_detail(uid, date):
     return template("templates/bill_detail", get_url=url, detail=detail)
 
 #################unimplemented#######################
+"""
+helper function is not working
+"""
+def helper(uid):
+    print uid
+    instances = myController.get_instance_by_uid(uid)
+    return template("templates/instances", get_url=url, instances=instances)
 
 @post('/login')
 def login():
     email = request.forms.get('email')
     password = request.forms.get('password')
-    rt = myController.sign_in(email,password)
-    print rt
-    if rt != 0:
-        #instances(rt)
-        webbrowser.open('http://localhost.com:8080/' + rt + '/instances')
+    uid = myController.sign_in(email,password)
+    s = bottle.request.environ.get('beaker.session')
+    s['uid'] = uid
+    s.save()
+ 
+    if uid != 0:
+        #helper(uid)
+        instances = myController.get_instance_by_uid(uid)
+        return template("templates/instances", get_url=url, instances=instances)
     else:
         print 'error'
     return
@@ -106,4 +129,4 @@ def static(filename):
 
 #Internal Server
 debug(True)
-run(reload=True)
+run(reload=True, app=app)
