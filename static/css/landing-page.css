@@ -17,7 +17,7 @@ body, h1, h2, h3, h4, h5, h6 {
 	padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
 	padding-bottom: 50px;
 	color: #f8f8f8;
-	background: url(../img/intro-bg2.jpg) no-repeat center center;
+	background: url(../img/intro-bg1.jpg) no-repeat center center;
 	background-size: cover;
 	text-align: center;
 }
@@ -150,4 +150,27 @@ footer {
 
 p.copyright {
 	margin: 15px 0 0;
+}
+
+.modal .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal .modal-header .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.modal .modal-footer {
+  border-top: none;
+  padding: 0;
+}
+.modal .modal-footer .btn-group > .btn:first-child {
+  border-bottom-left-radius: 0;
+}
+.modal .modal-footer .btn-group > .btn:last-child {
+  border-top-right-radius: 0;
 }
