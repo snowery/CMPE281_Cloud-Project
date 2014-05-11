@@ -30,7 +30,7 @@ sudo apt-get install virtualbox-4.3
 
 ======================
 We support image as below:
-%  Google Galaxy Nexus - 4.1.1 - API 16 - 720x1280
+%  LG Optimus L3 II - 4.1.1 - API 16 - 240x320
 %  HTC Evo - 4.2.2 - API 17 - 720x1280
-%  Motorola Moto X - 4.2.2 - API 17 - 720x1280
-%  Samsung Galaxy Note 2 - 4.2.2 - API 17 - 720x1280
+%  Samsung Galaxy S3 - 4.3 - API 18 - 720x1280
+%  Google Nexus 10 - 4.4.2 - API 19 - 2560x1600

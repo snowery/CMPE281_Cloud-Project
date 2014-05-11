@@ -26,12 +26,12 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
-                                    <div style="display: none;">Google Galaxy Nexus - 4.1.1 - API 16 - 720x1280</div>
-                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Google Galaxy Nexus</h3>
+                                    <div style="display: none;">LG Optimus L3 II - 4.1.1 - API 16 - 240x320</div>
+                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">LG Optimus L3 II</h3>
                                     <p>Android Version : 4.1.1</p>
-                                    <p>Screen Size : 720 X 1280</p>
-                                    <p>Memory / Storge : 1024M / 16384M</p>
-                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Google Galaxy Nexus - 4.1.1 - API 16 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <p>Screen Size : 240x320</p>
+                                    <p>Memory / Storge : 512M / 4096M</p>
+                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="LG Optimus L3 II - 4.1.1 - API 16 - 240x320"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -64,12 +64,12 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
-                                    <div style="display: none;">Motorola Moto X - 4.2.2 - API 17 - 720x1280</div>
-                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Motorola Moto X</h3>
-                                    <p>Android Version : 4.2.2</p>
+                                    <div style="display: none;">Samsung Galaxy S3 - 4.3 - API 18 - 720x1280</div>
+                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Samsung Galaxy S3</h3>
+                                    <p>Android Version : 4.3</p>
                                     <p>Screen Size : 720 X 1280</p>
-                                    <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Motorola Moto X - 4.2.2 - API 17 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <p>Memory / Storge : 1024M / 32768M</p>
+                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Samsung Galaxy S3 - 4.3 - API 18 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -82,13 +82,12 @@
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text">
-                                    <div style="display: none;">Samsung Galaxy Note 2 - 4.2.2 - API 17 - 720x1280</div>
-                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Samsung Galaxy Note</h3>
-                                    <p>Android Version : 4.2.2</p>
-                                    <p>Screen Size : 720 X 1280</p>
+                                    <div style="display: none;">Google Nexus 10 - 4.4.2 - API 19 - 2560x1600</div>
+                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Google Nexus 10</h3>
+                                    <p>Android Version : 4.4.2</p>
+                                    <p>Screen Size : 2560x1600</p>
                                     <p>Memory / Storge : 2048M / 16384M</p>
-                                    <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class="btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Samsung Galaxy Note 2 - 4.2.2 - API 17 - 720x1280" ><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    <a class="btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Google Nexus 10 - 4.4.2 - API 19 - 2560x1600" ><span class="glyphicon glyphicon-plus"> SELECT</span></a>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +161,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form id="lauchInstanceForm" action="/1/instances/launch" method="POST" >
+                    <form id="lauchInstanceForm" >
                          <div class="span1 col-md-6">
                             <div class="well">
                                 <h2 class="text-warning">On Demond</h2>
@@ -211,7 +210,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <input id="post" type="submit" value="Launch" class="btn btn-primary"/>
+                            <input id="launch" type="submit" value="Launch" class="btn btn-primary"/>
                         </div>
                     </form>
                 </div>

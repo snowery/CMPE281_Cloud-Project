@@ -65,6 +65,7 @@ class Controller:
         """
         given (vm_id, vm_name, host_string) and user id, launch instance
         """
+        self.launch_instance(vm['VmId'])
         now = datetime.datetime.now().isoformat()
         sql = "insert into orders(UserId, VmId, VmName, VmStatus, Uptime, LastStartTime, RatePlan, UnitPrice, LastBillDate) "+ \
                "values (%s, %s, '%s', '%s', %s, '%s', %s, %s, '%s')" % \
@@ -75,20 +76,21 @@ class Controller:
 
         self.c.execute("update instance set ReservedBy = %s, OrderId = %s where VmId = %s", (user_id, order_id, vm['VmId']))
         self.db.commit()
-        self.launch_instance(vm['VmId'])
+
 
     def launch_instance(self, vm_id):
         """
         power on vm and create a new log
         """
+        vm = self.get_instance_by_id(vm_id)
+        self.get_host(vm['Host']).launch(vm['VmName'])
+
         now = datetime.datetime.now()
         self.c.execute("select OrderId from instance where VmId = %s", vm_id)
         order_id = self.c.fetchone()['OrderId']
         self.c.execute("update orders set LastStartTime = %s, VmStatus = 'A' where VmId = %s and VmStatus = 'S'", (now, vm_id))
         self.c.execute("insert into logs(VmId, OrderId, StartTime, EndTime, Uptime) values (%s, %s, %s, null, null)", (vm_id, order_id, now))
         self.db.commit()
-        vm = self.get_instance_by_id(vm_id)
-        self.get_host(vm['Host']).launch(vm['VmName'])
 
     def poweroff_instance(self, vm_id):
         """
@@ -164,13 +166,11 @@ class Controller:
         else:
             return False
 
-
     def user_update(self, uid, password):        
         """
         update user information(password)
         """
         self.c.execute("update user set password = '%s' where uid = %s",(password,uid))
         self.db.commit()
-
 
 
