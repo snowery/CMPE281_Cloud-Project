@@ -1,3 +1,9 @@
 *.pyc
 .idea/
+<<<<<<< HEAD
 data/
+=======
+Beaker.egg-info/
+build/
+dist/
+>>>>>>> Make appearance of instances table more friendly

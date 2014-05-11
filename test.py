@@ -6,8 +6,8 @@ from controller import Controller
 
 class Test:
     def __init__(self):
-        self.controller = Controller("root", 'root', "cmpe281")
-        self.bill = Billing("root", 'root', "cmpe281")
+        self.controller = Controller("root", 'root', "cmpe2811")
+        self.bill = Billing("root", 'root', "cmpe2811")
 
 
     def host(self):
@@ -19,7 +19,7 @@ class Test:
         print host.get_running_instances()
 
     def controller_add_instances(self):
-        host = self.controller.get_host("lan@172.20.10.2")
+        host = self.controller.get_host("shibai86@172.20.10.4")
         self.controller.add_instances(host)
 
     def controller_get_instance_category(self):
@@ -67,7 +67,7 @@ class Test:
 #Test().controller_order('LG Optimus L3 II - 4.1.1 - API 16 - 240x320')
 #Test().host()
 #Test().controller_get_instance_category()
-Test().controller_poweroff(9)
+#Test().controller_poweroff(9)
 #Test().controller_launch(9)
 #Test().controller_poweroff(14)
 #Test().controller_terminate(9)
@@ -77,9 +77,6 @@ Test().controller_poweroff(9)
 #Test().get_instance_by_id(12)
 #Test().pay_bill(3)
 #Test().get_log(1)
-
-#Test().controller_add_instances()
+Test().controller_add_instances()
 #Test().get_log(1)
 
-Test().controller_add_instances()
->>>>>>> 1.add power on function

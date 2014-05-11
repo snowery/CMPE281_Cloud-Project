@@ -2,6 +2,28 @@
 
 $(function(){
 
+    ratePlans = $('.ratePlan');
+    for(var i = 0; i < ratePlans.length; i++){
+        ratePlan = ratePlans[i];
+        if($(ratePlan).text() == "0"){
+            $(ratePlan).text("On-demond");
+        }
+        if($(ratePlan).text() == "1"){
+            $(ratePlan).text("Flat-rate");
+        }
+    }
+    vmStatuses = $('.vmStatus');
+    for(var i = 0; i < vmStatuses.length; i++){
+        vmStatus = vmStatuses[i];
+        if($(vmStatus).text() == "S"){
+            $(vmStatus).text("Stop");
+        }
+        if($(vmStatus).text() == "A"){
+            $(vmStatus).text("Active");
+        }
+    }
+
+
 
     $('#launchInstance').click(function(){
         $('#instancesTable').hide();
@@ -30,6 +52,7 @@ $(function(){
                url:'/1/instances/launch',
                type:'POST',
                data:form,
+               timeout: 5000,
                beforeSend:function(){
                  window.location.replace("/1/instances");
                },
@@ -79,8 +102,10 @@ $(function(){
         $.ajax({
            url:"/1/instances/"+idArray[0]+"/poweroff",
            type:'GET',
+           timeout: 5000,
            success:function(data){
                alert(data);
+               window.location.replace("/1/instances");
            },
            error:function(){
               alert("error");
@@ -93,8 +118,10 @@ $(function(){
         $.ajax({
            url:"/1/instances/"+idArray[0]+"/poweron",
            type:'GET',
+           timeout: 5000,
            success:function(data){
                alert(data);
+               window.location.replace("/1/instances");
            },
            error:function(){
               alert("error");
@@ -107,8 +134,10 @@ $(function(){
         $.ajax({
            url:"/1/instances/"+idArray[0]+"/terminate",
            type:'GET',
+           timeout: 5000,
            success:function(data){
                alert(data);
+               window.location.replace("/1/instances");
            },
            error:function(){
               alert("error");

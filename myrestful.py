@@ -16,8 +16,10 @@ session_opts = {
 }
 app = SessionMiddleware(bottle.app(), session_opts)
 
-myController = controller.Controller("root", "root", "cmpe281")
-billingDao = billing.Billing("root", "root", "cmpe281")
+
+myController = controller.Controller("root", "root", "cmpe2811")
+billingDao = billing.Billing("root", "root", "cmpe2811")
+
 
 #REST URL Mapping
 @get('/')
@@ -123,7 +125,6 @@ def logout():
 
 @post('/<uid:int>/instances/launch')
 def launch(uid):
-
     rate = 0.25
     plan = request.forms.get('plan')
     number = request.forms.get('number')
@@ -137,14 +138,15 @@ def launch(uid):
     #vm = myController.get_idle_instances("Nexus 7 - 4.4.2 - API 19 - 800x1280")
     vm = myController.get_idle_instances(vmName)
     #launch multi VMs
-    #for i in range(0, int(number)):
-    myController.order_instance(vm[0], uid, int(plan), float(rate))
+    for i in range(0, int(number)):
+        print(vm[i])
+        myController.order_instance(vm[i], uid, int(plan), float(rate))
     #redirect("/"+str(uid)+"/instances")
 
 
 @get('/<uid:int>/instances/<vmid>/terminate')
 def terminate(uid, vmid):
-    myController.terminate_instance()
+    myController.terminate_instance(vmid)
     return "terminate"
 
 

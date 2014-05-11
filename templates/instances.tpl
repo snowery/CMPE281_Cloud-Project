@@ -124,31 +124,15 @@
                                     </thead>
                                     <tbody>
                                         % for instance in instances:
-                                        <tr class="success">
+                                        <tr class="info">
                                             <td><input class="checkbox" vmId="{{instance['VmId']}}" type="checkbox" name="checkbox"/></td>
                                             <td>{{instance['VmName']}}</td>
                                             <td style="padding-left: 35px;">{{instance['VmId']}}</td>
-                                            <td style="padding-left: 45px;">{{instance['VmStatus']}}</td>
+                                            <td class="vmStatus" style="padding-left: 40px;">{{instance['VmStatus']}}</td>
                                             <td>{{instance['LastStartTime']}}</td>
-                                            <td style="padding-left: 35px;">{{instance['RatePlan']}}</td>
+                                            <td class="ratePlan">{{instance['RatePlan']}}</td>
                                         </tr>
                                         % end
-                                         <!--<tr class="success">-->
-                                            <!--<td><input class="checkbox" vmId="11" type="checkbox" name="checkbox"/></td>-->
-                                            <!--<td>1</td>-->
-                                            <!--<td style="padding-left: 35px;">11</td>-->
-                                            <!--<td style="padding-left: 45px;">1</td>-->
-                                            <!--<td>1</td>-->
-                                            <!--<td style="padding-left: 35px;">1</td>-->
-                                        <!--</tr>-->
-                                         <!--<tr class="success">-->
-                                            <!--<td><input class="checkbox" vmId="12" type="checkbox" name="checkbox"/></td>-->
-                                            <!--<td>1</td>-->
-                                            <!--<td style="padding-left: 35px;">12</td>-->
-                                            <!--<td style="padding-left: 45px;">1</td>-->
-                                            <!--<td>1</td>-->
-                                            <!--<td style="padding-left: 35px;">1</td>-->
-                                        <!--</tr>-->
                                     </tbody>
                                 </table>
 
