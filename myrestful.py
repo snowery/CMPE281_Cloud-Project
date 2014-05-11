@@ -83,7 +83,8 @@ def login():
         print 'error'
     return
 
-def logout('logout'):
+@post('/logout')
+def logout():
     """
     user log out
     """
