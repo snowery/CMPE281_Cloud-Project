@@ -10,6 +10,11 @@ sudo pip install bottle
 #install fabric
 sudo pip install fabric
 
+#install beaker
+https://pypi.python.org/pypi/Beaker/1.6.4
+unzip it and go inside that folder, execute: sudo python setup.py install
+
+
 #install mysql
 sudo apt-get install mysql-server
 
