@@ -1,7 +1,9 @@
+from decimal import Decimal
+
 __author__ = 'lan'
 import MySQLdb
 from MySQLdb import cursors
-import datetime
+from datetime import datetime
 
 
 class Billing():
@@ -90,6 +92,34 @@ class Billing():
         bills.append({'total unpaid': total})
         return bills
 
+    def get_paid_bill_detail(self, user_id, paid_date):
+        if paid_date == '---':
+            self.c.execute("select o.VmName, b.Plan, b.UnitPrice, round(b.Uptime/60,1) Uptime, b.Charge from billing as b inner join orders as o on b.OrderId = o.OrderId where b.UserId = %s and b.Status='A'", user_id)
+        else:
+            self.c.execute("select o.VmName, b.Plan, b.UnitPrice, round(b.Uptime/60,1) Uptime, b.Charge from billing as b inner join orders as o on b.OrderId = o.OrderId where b.UserId = %s and b.PaidDate=%s", (user_id, paid_date))
+
+        sub_items = self.c.fetchall()
+        total = 0.0
+        for item in sub_items:
+            total += float(item['Charge'])
+
+        tax = total*0.09
+
+        now = datetime.now()
+
+        bill_detail = {'SubItems': sub_items, 'Subtotal': round(total, 2),
+                       'Tax': round(tax, 2), 'Total': round(total+tax, 2),
+                       'Date': (now.strftime("%B %d, %Y") if paid_date == '---' else datetime.strptime(paid_date, '%Y-%m-%d %H:%M:%S').strftime("%B %d, %Y")),
+                       'IsPaid': (paid_date != '---')}
+        return bill_detail
+
     def pay_bill(self, bill_id):
         self.c.execute("update billing set Status='C', PaidDate=%s where BillId = %s", (datetime.datetime.now(), bill_id))
         self.db.commit()
+
+    def get_bills_by_user(self, user_id):
+        """
+        return bills by user id
+        """
+        self.c.execute("select @rn:= @rn+1 No, sum(Charge) Amount, Status!='A' IsPaid, PaidDate from billing , (SELECT @rn:=0 rn) as n where UserId = %s group by PaidDate order by rn desc", user_id)
+        return self.c.fetchall()

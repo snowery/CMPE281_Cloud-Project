@@ -68,7 +68,7 @@ class Test:
 Test().controller_poweroff(14)
 #Test().controller_terminate(9)
 #Test().generate_reports()
-#Test().get_bill_history(1)
+Test().get_bill_history(1)
 #Test().calc_bill(1)
 #Test().get_instance_by_id(12)
 #Test().pay_bill(3)

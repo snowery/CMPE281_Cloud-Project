@@ -166,13 +166,11 @@ class Controller:
         else:
             return False
 
-
     def user_update(self, uid, password):        
         """
         update user information(password)
         """
         self.c.execute("update user set password = '%s' where uid = %s",(password,uid))
         self.db.commit()
-
 
 

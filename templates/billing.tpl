@@ -62,48 +62,39 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Amount</th>
-                                    <th>Paid</th>
-                                    <th>Date</th>
-                                    <th></th>
+                                    <th class="text-center">Amount</th>
+                                    <th class="text-center">Paid</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">Operation</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                % for bill in bills:
                                 <tr>
-                                    <td>0001</td>
-                                    <td>$321.33</td>
-                                    <td>Yes</td>
-                                    <td>10/21/2013 3:29 PM</td>
+                                    <td>{{bill['No']}}</td>
+                                    <td class="text-right">${{bill['Amount']}}</td>
+                                    <td class="text-center">
+                                        % if bill['IsPaid']==1:
+                                        Yes
+                                        % else:
+                                        No
+                                        % end
+                                    </td>
+                                    <td class="text-center">
+                                        {{bill['PaidDate']}}
+                                    </td>
                                     <td>
-                                        <button class="btn btn-info btn-sm btn-block" data-toggle="modal"
-                                                data-target=".bs-modal-sm">View Bill
+                                        % if bill['IsPaid']==1:
+                                        <button class="btn btn-info btn-sm btn-block payment" data-toggle="modal"
+                                                data-target=".bs-modal-sm" date="{{bill['PaidDate']}}">View Bill
                                         </button>
+                                        % else:
+                                        <button class="btn btn-success btn-sm btn-block payment" data-toggle="modal" data-target=".bs-modal-sm" date="---">Pay
+                                        </button>
+                                        % end
                                     </td>
                                 </tr>
-                                <tr>
-
-                                    <td>0002</td>
-                                    <td>$234.34</td>
-                                    <td>Yes</td>
-                                    <td>10/21/2013 3:20 PM</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm btn-block" data-toggle="modal"
-                                                data-target=".bs-modal-sm">View Bill
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-
-                                    <td>0003</td>
-                                    <td>$431.34</td>
-                                    <td>No</td>
-                                    <td>-</td>
-                                    <td>
-                                        <button class="btn btn-success btn-sm btn-block" data-toggle="modal"
-                                                data-target=".bs-modal-sm">Pay
-                                        </button>
-                                    </td>
-                                </tr>
+                                % end
                                 </tbody>
                             </table>
                         </div>
@@ -126,7 +117,7 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-body" id="receipt">
                 <div class="row" style="padding:10px">
                     <div class="well col-xs-12 col-sm-12 col-md-12">
                         <div class="row">
@@ -235,6 +226,19 @@
 
 % include('templates/jslinks.tpl', title='Javascript Links')
 
+<script>
+
+    $(function() {
+        $('button.payment').click(function(){
+            date = $(this).attr('date');
+            uid=1;
+            url = "/"+uid+"/billing_detail/"+date;
+            $.get(url, function(html){
+                $('#receipt').html(html);
+            });
+        });
+    });
+</script>
 </body>
 
 </html>

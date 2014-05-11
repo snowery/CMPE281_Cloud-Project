@@ -2,8 +2,10 @@ __author__ = 'Think'
 # import bottle_mysql
 from bottle import template, debug, static_file, url, route, run, install, get, post, request, redirect
 import controller
+import billing
 
-myController = controller.Controller("root", "root", "cmpe2811")
+myController = controller.Controller("root", "root", "cmpe281")
+billingDao = billing.Billing("root", "root", "cmpe281")
 
 #REST URL Mapping
 @get('/')
@@ -32,7 +34,13 @@ def instances(uid):
 
 @get('/<uid:int>/billing')
 def billing(uid):
-    return template("templates/billing", get_url=url)
+    bills = billingDao.get_bills_by_user(uid)
+    return template("templates/billing", get_url=url, bills=bills)
+
+@get('/<uid:int>/billing_detail/<date>')
+def bill_detail(uid, date):
+    detail = billingDao.get_paid_bill_detail(uid, date)
+    return template("templates/bill_detail", get_url=url, detail=detail)
 
 #################unimplemented#######################
 
