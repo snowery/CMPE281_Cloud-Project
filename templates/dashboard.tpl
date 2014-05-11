@@ -70,14 +70,14 @@
                             % for log in logs:
                                 % if log['on']:
                                     <li>
-                                        <div class="timeline-badge warning"><i class="fa fa-play"></i>
+                                        <div class="timeline-badge danger"><i class="fa fa-play"></i>
                                         </div>
                                         <div class="timeline-panel">
                                             <div class="timeline-heading">
                                                 <h4 class="timeline-title">Power on {{log['VmName']}}</h4>
                                 % else:
                                     <li class="timeline-inverted">
-                                        <div class="timeline-badge"><i class="fa fa-stop"></i>
+                                        <div class="timeline-badge success"><i class="fa fa-stop"></i>
                                         </div>
                                         <div class="timeline-panel">
                                             <div class="timeline-heading">

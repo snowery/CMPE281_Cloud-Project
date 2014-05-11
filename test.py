@@ -15,7 +15,7 @@ class Test:
         host = self.controller.get_host("lan@localhost")
 
         print host.get_instances()
-        print host.get_instance_status('Nexus 7 - 4.4.2 - API 19 - 800x1280')
+        print host.get_instance_status('LG Optimus L3 II - 4.1.1 - API 16 - 240x320')
         print host.get_running_instances()
 
     def controller_add_instances(self):
@@ -62,11 +62,14 @@ class Test:
     def get_log(self, user_id):
         print self.controller.get_log_by_user(user_id)
 
+
 #Test().controller_order('dev_01')
+#Test().controller_order('LG Optimus L3 II - 4.1.1 - API 16 - 240x320')
 #Test().host()
 #Test().controller_get_instance_category()
+#Test().controller_poweroff(9)
 #Test().controller_launch(9)
-Test().controller_poweroff(14)
+#Test().controller_poweroff(14)
 #Test().controller_terminate(9)
 #Test().generate_reports()
 Test().get_bill_history(1)
@@ -75,3 +78,4 @@ Test().get_bill_history(1)
 #Test().pay_bill(3)
 #Test().get_log(1)
 #Test().controller_add_instances()
+#Test().get_log(1)
