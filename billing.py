@@ -3,7 +3,7 @@ from decimal import Decimal
 __author__ = 'lan'
 import MySQLdb
 from MySQLdb import cursors
-import datetime
+from datetime import datetime
 
 
 class Billing():
@@ -126,4 +126,12 @@ class Billing():
         return bills by user id
         """
         self.c.execute("select @rn:= @rn+1 No, sum(Charge) Amount, Status!='A' IsPaid, PaidDate from billing , (SELECT @rn:=0 rn) as n where UserId = %s group by PaidDate order by rn desc", user_id)
+        return self.c.fetchall()
+
+
+    def get_hourly_usage_by_user(self, user_id):
+        """
+        return hourly usage by user id
+        """
+        self.c.execute("select DATE_FORMAT(EndTime,'%%Y-%%m-%%d %%h:00:00') Date, FORMAT(Uptime/60,0) Uptime from logs where VmId in (select VmId from instance where ReservedBy = %s)  group by Date", user_id)
         return self.c.fetchall()

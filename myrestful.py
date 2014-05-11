@@ -6,7 +6,7 @@ import webbrowser
 import bottle
 import controller
 import billing
-
+import json
 
 session_opts = {
     'session.type': 'file',
@@ -24,7 +24,6 @@ billingDao = billing.Billing("root", "root", "cmpe281")
 def home():
     return static_file("landing.html", root="static/html")
 
-
 @get('/<uid:int>/dashboard')
 def dashboard(uid):
     instances = myController.get_instance_by_user(uid)
@@ -37,7 +36,6 @@ def dashboard(uid):
     logs = myController.get_log_by_user(uid)
 
     return template("templates/dashboard", get_url=url, running=running, total=total, logs=logs)
-
 
 @get('/<uid:int>/instances')
 def instances(uid):
@@ -86,13 +84,9 @@ def login():
     s = bottle.request.environ.get('beaker.session')
  
     if uid != 0:
-        #helper(uid)
-        s['uid'] = uid
-        s.save()
-        instances = myController.get_instance_by_uid(uid)
-        return template("templates/instances", get_url=url, instances=instances)
+        redirect("/%s/dashboard" % uid)
     else:
-        print static_file("landing.html", root="static/html") 
+        redirect('/')
     return
 
 
@@ -168,6 +162,12 @@ def poweron(uid, vmid):
 @get('/<uid:int>/usage')
 def usage(uid):
     return template("templates/usage", get_url=url)
+
+@get('/<uid:int>/hourly_usage')
+def hourly_usage(uid):
+    usages = billingDao.get_hourly_usage_by_user(uid)
+
+    return json.dumps(usages, ensure_ascii=False)
 
 ###################################################
 

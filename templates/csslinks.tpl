@@ -15,3 +15,5 @@
 <link href="{{ get_url('/static/<filename:path>', filename='css/sb-admin.css')}}" rel="stylesheet">
 
 <link href="{{ get_url('/static/<filename:path>', filename='css/launch.css')}}" rel="stylesheet" >
+
+<link href="{{ get_url('/static/<filename:path>', filename='css/morris-0.4.3.min.css')}}" rel="stylesheet" >
