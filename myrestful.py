@@ -83,6 +83,26 @@ def login():
         print 'error'
     return
 
+
+@post('/signup')
+def signup():
+    """
+    user sign up
+    """
+    email = request.forms.get('email')
+    password = request.forms.get('password')
+    uid = myController.sign_up(email,password)
+    
+    if uid != 0:
+        #helper(uid)
+        instances = myController.get_instance_by_uid(uid)
+        return template("templates/instances", get_url=url, instances=instances)
+    else:
+        print 'error'
+    return
+
+
+
 @post('/logout')
 def logout():
     """
@@ -91,6 +111,7 @@ def logout():
     s = bottle.request.environ.get('beaker.session')
     s.delete()
     return static_file("landing.html", root="static/html") 
+
 
 @post('/<uid:int>/instances/launch')
 def launch(uid):
