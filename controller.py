@@ -91,12 +91,13 @@ class Controller:
         thread.start()
         now = datetime.datetime.now()
 
-        while h.get_instance_status(vm_name) != "running":
+        status = h.get_instance_status(vm_name)
+        while status != "running":
+            print "Check status:" + status
             print "Launch in process..."
             sleep(3)
+            status = h.get_instance_status(vm_name)
 
-        status = h.get_instance_status(vm_name)
-        print "Check status:" + status
         if status == "running":
             self.c.execute("select OrderId from instance where VmId = %s", vm_id)
             order_id = self.c.fetchone()['OrderId']
@@ -119,12 +120,13 @@ class Controller:
         h.poweroff(vm_name)
         now = datetime.datetime.now()
 
-        while h.get_instance_status(vm_name) != "powered off":
+        status = h.get_instance_status(vm_name)
+        while status != "powered off":
+            print "Check status:" + status
             print "Power off in process..."
             sleep(3)
+            status = h.get_instance_status(vm_name)
 
-        status = h.get_instance_status(vm_name)
-        print "Check status:" + status
         if status == "powered off":
             self.c.execute("select Uptime, LastStartTime, LastBillDate from orders where VmId = %s and VmStatus = 'A'", vm_id)
             timestamp = self.c.fetchone()

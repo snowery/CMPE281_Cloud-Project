@@ -16,9 +16,10 @@ class Host:
     def exe_cmd(self, cmd):
         with hide('output','running','warnings'), settings(warn_only=True):
             try:
+                print "[Execute remote command]", cmd
                 return run(cmd)
             except Exception, e:
-                print "Caught exception: ", e.message
+                print " Caught exception: ", e.message
                 self.exe_cmd(cmd)
 
     def launch(self, vm_name):
@@ -26,22 +27,25 @@ class Host:
 
     def poweroff(self, vm_name):
         self.exe_cmd("VBoxManage controlvm '"+ vm_name +"' poweroff")
-        self.exe_cmd('ps -axf | grep "' + self.player_path + ' --vm-name ' + vm_name + '" | grep -v grep | awk \'{print "kill " $3}\' | sh')
+        self.exe_cmd('ps -axf | grep "' + self.player_path + ' --vm-name ' + vm_name + '" | grep -v grep | awk \'{print "kill " $2}\' | sh')
 
     def get_instances(self):
-        lists = self.exe_cmd("VBoxManage list vms -l | grep -e ^Name -e ^State | sed s/\ \ //g | cut -d: -f2-").split('\r\n')
-        instances = {}
-        for i in range(0, len(lists), 2):
-            instances[lists[i]] = lists[i+1][1:]
-        return instances
+        try:
+            lists = self.exe_cmd("VBoxManage list vms -l | grep -e ^Name -e ^State | sed s/\ \ //g | cut -d: -f2-").split('\r\n')
+            if len(lists) == 0 or len(lists)%2 != 0:
+                raise Exception(lists)
+            instances = {}
+            for i in range(0, len(lists), 2):
+                instances[lists[i]] = lists[i+1][1:]
+
+            return instances
+        except Exception, e:
+            print "Get instances exception:", e.message
+            self.get_instances()
 
     def get_instance_status(self, vm_name):
-        try:
-            return self.get_instances()[vm_name].split('(')[0][:-1]
-        except Exception, e:
-            print "Caught exception: ", e.message
-            self.get_instance_status(vm_name)
-
+        status = self.get_instances()[vm_name]
+        return status.split('(')[0][:-1]
 
     def get_running_instances(self):
         lists = self.exe_cmd("VBoxManage list runningvms").split('\n')
