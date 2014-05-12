@@ -97,15 +97,15 @@
                     </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
             <div id="instancesTable" class = "row">
-                <div class="row panel panel-default">
+                   <div class="col-lg-12">
+                        <h1 class="page-header">Instance</h1>
+                        <div class="panel panel-default">
                         <div class="panel-heading">
-                           Your Reserved Instances
+                           <i class="fa fa-android fa-fw"></i> Your Reserved Instances
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -114,7 +114,7 @@
                                     <div class="row" style="margin-bottom: 7px;">
                                         <div class="col-sm-6">
                                             <div class="dataTables_length" id="dataTables-example_length">
-                                                <span><button class="btn btn-info" id="launchInstance" >Launch</button></span>
+                                                <span><button class="btn btn-primary" id="launchInstance" >Launch</button></span>
                                                 <div class="btn-group">
                                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
                                                    <ul class="dropdown-menu" role="menu">
@@ -167,7 +167,10 @@
                         </div>
                         <!-- /.panel-body -->
                     </div>
+                    </div>
+                    </div>
             </div>
+    </div>
 
    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
