@@ -103,7 +103,7 @@ class Billing():
         for item in sub_items:
             total += float(item['Charge'])
 
-        tax = total*0.09
+        tax = 0.00
 
         now = datetime.now()
 

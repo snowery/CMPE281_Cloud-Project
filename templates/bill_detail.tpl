@@ -44,7 +44,7 @@
                         <td class="col-md-9"><em>{{item['VmName']}}</em></h4></td>
                         <td class="col-md-1" style="text-align: center">
                             <span class="badge alert-success">
-                            % if item['Plan']=='0':
+                            % if item['Plan']==0:
                             O
                             % else:
                             F
