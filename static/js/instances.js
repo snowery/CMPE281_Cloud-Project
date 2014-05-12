@@ -50,20 +50,19 @@ $(function(){
     });
 
     $('#launch').click(function(){
-        alert("in");
+       // alert("in");
         $('#lauchInstanceForm').submit(function(e){
-           alert("form");
+          // alert("form");
            e.preventDefault();
            form = $(this).serialize();
            $.ajax({
                url:'/1/instances/launch',
                type:'POST',
                data:form,
-               timeout: 5000,
-               beforeSend:function(){
-                 window.location.replace("/1/instances");
-               },
+               timeout: 500000,
                success:function(){
+                   alert("launch successfully")
+                   window.location.replace("/1/instances");
                },
                error:function(){
                   window.location.replace("/1/instances");
@@ -141,7 +140,7 @@ $(function(){
         $.ajax({
            url:"/1/instances/"+idArray[0]+"/terminate",
            type:'GET',
-           timeout: 5000,
+           timeout: 500000,
            success:function(data){
                alert(data);
                window.location.replace("/1/instances");

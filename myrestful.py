@@ -17,8 +17,8 @@ session_opts = {
 app = SessionMiddleware(bottle.app(), session_opts)
 
 
-myController = controller.Controller("root", "root", "cmpe281")
-billingDao = billing.Billing("root", "root", "cmpe281")
+myController = controller.Controller("root", "root", "cmpe2811")
+billingDao = billing.Billing("root", "root", "cmpe2811")
 
 
 #REST URL Mapping
@@ -50,6 +50,7 @@ def instances(uid):
 @get('/<uid:int>/billing')
 def billing(uid):
     bills = billingDao.get_bills_by_user(uid)
+    print(bills)
     return template("templates/billing", get_url=url, bills=bills)
 
 @get('/<uid:int>/billing_detail/<date>')
