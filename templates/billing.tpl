@@ -219,6 +219,10 @@
                 $('#receipt').html(html);
             });
         });
+
+        $('#myModal').on('hidden.bs.modal', function (e) {
+            window.location.replace('/1/billing');
+        });
     });
 
 </script>

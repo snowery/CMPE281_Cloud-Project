@@ -138,3 +138,10 @@ class Billing():
         """
         self.c.execute("select DATE_FORMAT(EndTime,'%%Y-%%m-%%d %%h:00:00') Date, FORMAT(Uptime/60,0) Uptime from logs where VmId in (select VmId from instance where ReservedBy = %s)  group by Date", user_id)
         return self.c.fetchall()
+
+    def get_hourly_cost_by_user(self, user_id):
+        """
+        return hourly cost by user id
+        """
+        self.c.execute("select DATE_FORMAT(EndTime,'%%Y-%%m-%%d %%h:00:00') Date, FORMAT(sum(Charge),2) Amount from billing where UserId = %s  group by Date", user_id)
+        return self.c.fetchall()

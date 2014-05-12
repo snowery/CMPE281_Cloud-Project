@@ -38,8 +38,7 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
-                                        <li><a href="#" id="btnRefreshChart">Refresh</a>
-                                        </li>
+                                        <li><a href="#" id="btnRefreshUsage">Refresh</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -47,6 +46,35 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div id="hourly_usage"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Hourly Cost
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        Actions
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#" id="btnRefreshCost">Refresh</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="hourly_cost"></div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -67,7 +95,7 @@
     <script>
         $(function(){
 
-            $('#btnRefreshChart').click(function(){
+            $('#btnRefreshUsage').click(function(){
 
                 $('#hourly_usage').html('');
                 var user_id = 1;
@@ -83,7 +111,24 @@
                 });
             });
 
-            $('#btnRefreshChart').click();
+            $('#btnRefreshCost').click(function(){
+
+                $('#hourly_cost').html('');
+                var user_id = 1;
+                var url = "/" + user_id + "/hourly_cost";
+                $.get(url, function(data){
+                    Morris.Bar({
+                      element: 'hourly_cost',
+                      data: JSON.parse(data),
+                      xkey: 'Date',
+                      ykeys: ['Amount'],
+                      labels: ['Amount($)']
+                    });
+                });
+            });
+
+            $('#btnRefreshUsage').click();
+            $('#btnRefreshCost').click();
 
         });
 

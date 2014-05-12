@@ -175,6 +175,12 @@ def hourly_usage(uid):
 
     return json.dumps(usages, ensure_ascii=False)
 
+@get('/<uid:int>/hourly_cost')
+def hourly_cost(uid):
+    costs = billingDao.get_hourly_cost_by_user(uid)
+
+    return json.dumps(costs, ensure_ascii=False)
+
 ###################################################
 
 @route('/static/<filename:path>')
