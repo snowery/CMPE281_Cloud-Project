@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
     <title>GenyCloud</title>
     % include('templates/csslinks.tpl', title='CSS Links')
 </head>
@@ -16,11 +14,10 @@
             % if launch:
             <div id="chooseImage" class = "row">
             % else:
-            <div id="chooseImage" class = "row"style="display:none">
+            <div id="chooseImage" class = "row" style="display:none">
             % end
                 <div class="col-lg-12">
                     <h1 class="page-header">Choose Image</h1>
-
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="row">
@@ -137,12 +134,12 @@
                                     <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
                                         <thead>
                                             <tr role="row">
-                                                <th><input class="checkbox"  id="checkAll" type="checkbox" name="checkbox"/></th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 30px;"><input class="checkbox"  id="checkAll" type="checkbox" name="checkbox"/></th>
                                                 <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 390px;">name</th>
                                                 <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 110px;">Instance ID</th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 158px;">Instance State</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 158px;">Instance State</th>
                                                 <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 200px;">Launch Time</th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 114px;">Rate Plan</th>
+                                                <th tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 114px;">Rate Plan</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -245,8 +242,9 @@
             </div>
         </div>-
     </div>
-
-
+</div>
+</div>
+    </div>
   % include('templates/jslinks.tpl', title='Javascript Links')
 </body>
 </html>

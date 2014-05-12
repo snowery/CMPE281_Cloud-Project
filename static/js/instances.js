@@ -1,7 +1,6 @@
 
 
 $(function(){
-
     ratePlans = $('.ratePlan');
     for(var i = 0; i < ratePlans.length; i++){
         ratePlan = ratePlans[i];
@@ -22,8 +21,6 @@ $(function(){
             $(vmStatus).text("Active");
         }
     }
-
-
 
     $('#launchInstance').click(function(){
         $('#instancesTable').hide();
@@ -49,27 +46,38 @@ $(function(){
          $('#vmName').val($(this).attr('vmName'));
     });
 
-    $('#launch').click(function(){
-       // alert("in");
+    $('#launch').click(function(e){
+        if($('#plan').val() == "" || $('#plan').val() == null){
+            alert("Please Choose a plan");
+            e.preventDefault();
+        }
+
         $('#lauchInstanceForm').submit(function(e){
-          // alert("form");
-           e.preventDefault();
-           form = $(this).serialize();
-           $.ajax({
-               url:'/1/instances/launch',
-               type:'POST',
-               data:form,
-               timeout: 500000,
-               success:function(){
-                   alert("launch successfully")
-                   window.location.replace("/1/instances");
-               },
-               error:function(){
-                  window.location.replace("/1/instances");
-                  alert("error");
-               }
-           });
-       });
+               e.preventDefault();
+               $('.close').click();
+               $('#instancesTable').show();
+               $('#chooseImage').hide();
+               blockScreen("Lauching, please wait...")
+               form = $(this).serialize();
+               $.ajax({
+                   url:'/1/instances/launch',
+                   type:'POST',
+                   data:form,
+                   timeout: 50000,
+                   success:function(data){
+                       $('#plan').val("");
+                       console.log(data);
+                       window.location.replace("/1/instances");
+                   },
+                   error:function(){
+                      unBlock();
+                      console.log("error");
+                      alert("Network problem, please manully refresh page to syn data, thank you!");
+                   }
+               });
+            });
+
+
     });
 
     $('#checkAll').click(function(){
@@ -81,8 +89,6 @@ $(function(){
              $('.vmOperation').addClass("disabled");
          }
     });
-
-
     $('.checkbox').click(function(){
         noChecked = true;
         if(!$(this).prop('checked')){
@@ -105,52 +111,72 @@ $(function(){
 
     $('#powerOff').click(function(){
         idArray = setVmId();
+        blockScreen("Powering off...");
         $.ajax({
            url:"/1/instances/"+idArray[0]+"/poweroff",
            type:'GET',
            timeout: 5000,
            success:function(data){
-               alert(data);
-               window.location.replace("/1/instances");
+               console.log(data);
+               $('input:checked').parent().siblings('.vmStatus').text("Stop")
+               unBlock();
            },
            error:function(){
-              alert("error");
+              unBlock();
+              console.log("power-off error");
+              alert("Network problem, please manully refresh page to syn data, thank you!");
            }
         });
     });
 
     $('#powerOn').click(function(){
         idArray = setVmId();
+        blockScreen("Powering on...");
         $.ajax({
            url:"/1/instances/"+idArray[0]+"/poweron",
            type:'GET',
-           timeout: 5000,
+           timeout: 50000,
            success:function(data){
-               alert(data);
-               window.location.replace("/1/instances");
+               console.log(data);
+               $('input:checked').parent().siblings('.vmStatus').text("Active")
+               unBlock();
            },
            error:function(){
-              alert("error");
+              unBlock();
+              console.log("power-on error");
+              alert("Network problem, please manully refresh page to syn data, thank you!");
            }
         });
     });
 
     $('#terminate').click(function(){
         idArray = setVmId();
+        blockScreen("Terminating...");
         $.ajax({
            url:"/1/instances/"+idArray[0]+"/terminate",
            type:'GET',
-           timeout: 500000,
+           timeout: 50000,
            success:function(data){
-               alert(data);
-               window.location.replace("/1/instances");
+               console.log(data);
+               $('input:checked').parent().parent().remove();
+               unBlock();
            },
            error:function(){
-              alert("error");
+              unBlock();
+              console.log("terminate error");
+              alert("Network problem, please manully refresh page to syn data, thank you!");
            }
         });
     });
 });
+
+function blockScreen(text){
+  $.blockUI({ message: '<span style="font-size:27px;font-family: Arial " ><img style="padding-bottom:5px " src="../static/img/busy.gif" /> '+text+'</span>' });
+}
+
+function unBlock(){
+    $.unblockUI();
+}
 
 function setVmId(){
     var vmId = new Array();

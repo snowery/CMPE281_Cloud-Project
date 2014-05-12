@@ -143,10 +143,10 @@ def launch(uid):
     vm = myController.get_idle_instances(vmName)
     #launch multi VMs
     for i in range(0, int(number)):
-        print(vm[i])
+        print(i)
         myController.order_instance(vm[i], uid, int(plan), float(rate))
     #redirect("/"+str(uid)+"/instances")
-
+    return "succ"
 
 @get('/<uid:int>/instances/<vmid>/terminate')
 def terminate(uid, vmid):

@@ -1,6 +1,7 @@
     <!-- Core Scripts - Include with every page -->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-   <!-- <script src="{{get_url('/static/<filename:path>',filename='js/jquery-1.10.2.js')}}" ></script>-->
+    <!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <script src="{{get_url('/static/<filename:path>',filename='js/jquery-1.10.2.js')}}" ></script>
+    <script src="{{get_url('/static/<filename:path>',filename='js/jquery.blockUI.js')}}" ></script>
 
     <script src="{{get_url('/static/<filename:path>',filename='js/bootstrap.min.js')}}" ></script>
     <script src="{{get_url('/static/<filename:path>',filename='js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
