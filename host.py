@@ -20,7 +20,7 @@ class Host:
                 return run(cmd)
             except Exception, e:
                 print " Caught exception: ", e.message
-                self.exe_cmd(cmd)
+                return self.exe_cmd(cmd)
 
     def launch(self, vm_name):
         self.exe_cmd(self.player_path + ' --vm-name "' + vm_name + '"')
@@ -41,7 +41,7 @@ class Host:
             return instances
         except Exception, e:
             print "Get instances exception:", e.message
-            self.get_instances()
+            return self.get_instances()
 
     def get_instance_status(self, vm_name):
         status = self.get_instances()[vm_name]
