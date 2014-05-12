@@ -94,63 +94,73 @@
                     </div>
                 </div>
             </div>
-            <div class="row" id="instancesTable">
-                <div class="col-lg-13">
-                    <div class="panel panel-default">
+
+            <div id="instancesTable" class = "row">
+                <div class="row panel panel-default">
                         <div class="panel-heading">
-                            <span><button class="btn btn-info" id="launchInstance" >Launch</button></span>
-                            <div class="btn-group">
-                              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-                              <ul class="dropdown-menu" role="menu">
-                                <li><a id="powerOff" class="btn disabled vmOperation"  href="#">Power Off</a></li>
-                                <li><a id="powerOn" class="btn disabled vmOperation" href="#">Power On</a></li>
-                                <li><a id="terminate" class="btn disabled vmOperation" href="#">Terminate</a></li>
-                              </ul>
-                            </div>
+                           Your Reserved Instances
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table" style="text-align: left;">
-                                    <thead>
-                                        <tr>
-                                            <th><input class="checkbox"  id="checkAll" type="checkbox" name="checkbox"/></th>
-                                            <th>name</th>
-                                            <th>Instance ID</th>
-                                            <th>Instance State</th>
-                                            <th>Launch Time</th>
-                                            <th>Rate Plan</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        % for instance in instances:
-                                        <tr class="info">
-                                            <td><input class="checkbox" vmId="{{instance['VmId']}}" type="checkbox" name="checkbox"/></td>
-                                            <td>{{instance['VmName']}}</td>
-                                            <td style="padding-left: 35px;">{{instance['VmId']}}</td>
-                                            <td class="vmStatus" style="padding-left: 40px;">{{instance['VmStatus']}}</td>
-                                            <td>{{instance['LastStartTime']}}</td>
-                                            <td class="ratePlan">{{instance['RatePlan']}}</td>
-                                        </tr>
-                                        % end
-                                    </tbody>
-                                </table>
-
-                            </div>
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                    <div class="row" style="margin-bottom: 7px;">
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_length" id="dataTables-example_length">
+                                                <span><button class="btn btn-info" id="launchInstance" >Launch</button></span>
+                                                <div class="btn-group">
+                                                   <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                                                   <ul class="dropdown-menu" role="menu">
+                                                      <li><a id="powerOff" class="btn disabled vmOperation"  href="#">Power Off</a></li>
+                                                      <li><a id="powerOn" class="btn disabled vmOperation" href="#">Power On</a></li>
+                                                      <li><a id="terminate" class="btn disabled vmOperation" href="#">Terminate</a></li>
+                                                   </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th><input class="checkbox"  id="checkAll" type="checkbox" name="checkbox"/></th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 390px;">name</th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 110px;">Instance ID</th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 158px;">Instance State</th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 200px;">Launch Time</th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 114px;">Rate Plan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!--<tr class="gradeA odd">-->
+                                                <!--<td class="sorting_1">Gecko</td>-->
+                                                <!--<td class=" ">Firefox 1.0</td>-->
+                                                <!--<td class=" ">Win 98+ / OSX.2+</td>-->
+                                                <!--<td class="center ">1.7</td>-->
+                                                <!--<td class="center ">A</td>-->
+                                            <!--</tr>-->
+                                            % for instance in instances:
+                                            <tr class="gradeA odd">
+                                                <td><input class="checkbox" vmId="{{instance['VmId']}}" type="checkbox" name="checkbox"/></td>
+                                                <td>{{instance['VmName']}}</td>
+                                                <td style="padding-left: 35px;">{{instance['VmId']}}</td>
+                                                <td class="vmStatus" style="padding-left: 40px;">{{instance['VmStatus']}}</td>
+                                                <td>{{instance['LastStartTime']}}</td>
+                                                <td class="ratePlan">{{instance['RatePlan']}}</td>
+                                            </tr>
+                                            % end
+                                        </tbody>
+                                    </table>
+                                </div>
                             <!-- /.table-responsive -->
+                            <!--<div class="well">-->
+                                <!--<h4>DataTables Usage Information</h4>-->
+                                <!--<p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are using a specialized version of DataTables built for Bootstrap 3. We have also customized the table headings to use Font Awesome icons in place of images. For complete documentation on DataTables, visit their website at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.</p>-->
+                                <!--<a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>-->
+                            <!--</div>-->
                         </div>
-
                         <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-13 -->
             </div>
-        </div>
-        <!-- /#page-wrapper -->
-    </div>
-    <!-- /#wrapper -->
-
 
    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
