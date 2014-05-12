@@ -14,84 +14,91 @@
         % include('templates/header.tpl', title='Page header and navigation')
         <div id="page-wrapper">
             <div class="row" id="chooseImage"  style="display:none ">
-                <div class="row" style="margin-left: 15px;">
-                    <h1>Choose Image</h1>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-                            <p style="text-align:center; margin-top:20px;">
-                                <img src="http://placehold.it/500x330" class="img-responsive" alt=""/>
-                            </p>
-                            <div class="caption">
-                                <div class="blur"></div>
-                                <div class="caption-text">
-                                    <div style="display: none;">LG Optimus L3 II - 4.1.1 - API 16 - 240x320</div>
-                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">LG Optimus L3 II</h3>
-                                    <p>Android Version : 4.1.1</p>
-                                    <p>Screen Size : 240x320</p>
-                                    <p>Memory / Storge : 512M / 4096M</p>
-                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="LG Optimus L3 II - 4.1.1 - API 16 - 240x320"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                <div class="col-lg-12">
+                    <h1 class="page-header">Choose Image</h1>
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                        <div class="col-lg-6">
+                            <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                <p style="text-align:center; ">
+                                    <img src="../static/img/LG-Optimus-L3.jpg" class="img-responsive" alt=""/>
+                                </p>
+                                <div class="caption">
+                                    <div class="blur"></div>
+                                    <div class="caption-text">
+                                        <div style="display: none;">LG Optimus L3 II - 4.1.1 - API 16 - 240x320</div>
+                                        <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">LG Optimus L3 II</h3>
+                                        <p>Android Version : 4.1.1</p>
+                                        <p>Screen Size : 240x320</p>
+                                        <p>Memory / Storge : 512M / 4096M</p>
+                                        <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="LG Optimus L3 II - 4.1.1 - API 16 - 240x320"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                <p style="text-align:center; ">
+                                    <img src="../static/img/HTC-Evo.jpg" class="img-responsive" alt="" />
+                                </p>
+                                <div class="caption">
+                                    <div class="blur"></div>
+                                    <div class="caption-text">
+                                        <div style="display: none;">HTC Evo - 4.2.2 - API 17 - 720x1280</div>
+                                        <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">HTC Evo</h3>
+                                        <p>Android Version : 4.2.2</p>
+                                        <p>Screen Size : 720 X 1280</p>
+                                        <p>Memory / Storge : 2048M / 16384M</p>
+                                        <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="HTC Evo - 4.2.2 - API 17 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-                            <p style="text-align:center; margin-top:20px;">
-                                <img src="http://placehold.it/500x330" class="img-responsive" alt="" />
-                            </p>
-                            <div class="caption">
-                                <div class="blur"></div>
-                                <div class="caption-text">
-                                    <div style="display: none;">HTC Evo - 4.2.2 - API 17 - 720x1280</div>
-                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">HTC Evo</h3>
-                                    <p>Android Version : 4.2.2</p>
-                                    <p>Screen Size : 720 X 1280</p>
-                                    <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="HTC Evo - 4.2.2 - API 17 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                <p style="text-align:center;">
+                                    <img src="../static/img/Samsung-Galaxy-S3.jpg" class="img-responsive" alt="" />
+                                </p>
+                                <div class="caption">
+                                    <div class="blur"></div>
+                                    <div class="caption-text">
+                                        <div style="display: none;">Samsung Galaxy S3 - 4.3 - API 18 - 720x1280</div>
+                                        <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Samsung Galaxy S3</h3>
+                                        <p>Android Version : 4.3</p>
+                                        <p>Screen Size : 720 X 1280</p>
+                                        <p>Memory / Storge : 1024M / 32768M</p>
+                                        <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Samsung Galaxy S3 - 4.3 - API 18 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                <p style="text-align:center;">
+                                    <img src="../static/img/google-nexus-10.png" class="img-responsive" alt="" />
+                                </p>
+                                <div class="caption">
+                                    <div class="blur"></div>
+                                    <div class="caption-text">
+                                        <div style="display: none;">Google Nexus 10 - 4.4.2 - API 19 - 2560x1600</div>
+                                        <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Google Nexus 10</h3>
+                                        <p>Android Version : 4.4.2</p>
+                                        <p>Screen Size : 2560x1600</p>
+                                        <p>Memory / Storge : 2048M / 16384M</p>
+                                        <a class="btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Google Nexus 10 - 4.4.2 - API 19 - 2560x1600" ><span class="glyphicon glyphicon-plus"> SELECT</span></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-                            <p style="text-align:center; margin-top:20px;">
-                                <img src="http://placehold.it/500x330" class="img-responsive" alt="" />
-                            </p>
-                            <div class="caption">
-                                <div class="blur"></div>
-                                <div class="caption-text">
-                                    <div style="display: none;">Samsung Galaxy S3 - 4.3 - API 18 - 720x1280</div>
-                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Samsung Galaxy S3</h3>
-                                    <p>Android Version : 4.3</p>
-                                    <p>Screen Size : 720 X 1280</p>
-                                    <p>Memory / Storge : 1024M / 32768M</p>
-                                    <a class=" btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Samsung Galaxy S3 - 4.3 - API 18 - 720x1280"><span class="glyphicon glyphicon-plus"> SELECT</span></a>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-                            <p style="text-align:center; margin-top:20px;">
-                                <img src="http://placehold.it/500x330" class="img-responsive" alt="" />
-                            </p>
-                            <div class="caption">
-                                <div class="blur"></div>
-                                <div class="caption-text">
-                                    <div style="display: none;">Google Nexus 10 - 4.4.2 - API 19 - 2560x1600</div>
-                                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Google Nexus 10</h3>
-                                    <p>Android Version : 4.4.2</p>
-                                    <p>Screen Size : 2560x1600</p>
-                                    <p>Memory / Storge : 2048M / 16384M</p>
-                                    <a class="btn btn-default select" data-toggle="modal" data-target="#myModal" href="#" vmName="Google Nexus 10 - 4.4.2 - API 19 - 2560x1600" ><span class="glyphicon glyphicon-plus"> SELECT</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
 
