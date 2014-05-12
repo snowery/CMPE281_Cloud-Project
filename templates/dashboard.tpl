@@ -46,7 +46,7 @@
                                             <var>{{running}} / {{total}}</var>
                                             <label class="text-muted">Running Instances</label>
                                         </div>
-                                        <button class="btn btn-primary btn-lg btn3d btn-block" id="launchInstance"><span class="glyphicon"></span>Launch Instance</button>
+                                        <a class="btn btn-primary btn-lg btn3d btn-block" id="launchInstance" href="\1\instances?launch=1"><span class="glyphicon"></span>Launch Instance</a>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">

@@ -313,3 +313,7 @@ table.dataTable thead .sorting:after {
 .show-grid {
     margin: 15px 0;
 }
+
+.plan {
+    background-color: #e5f5ee
+}

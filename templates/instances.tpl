@@ -13,7 +13,11 @@
     <div id="wrapper">
         % include('templates/header.tpl', title='Page header and navigation')
         <div id="page-wrapper">
-            <div class="row" id="chooseImage"  style="display:none ">
+            % if launch:
+            <div id="chooseImage" class = "row">
+            % else:
+            <div id="chooseImage" class = "row"style="display:none">
+            % end
                 <div class="col-lg-12">
                     <h1 class="page-header">Choose Image</h1>
 
@@ -100,7 +104,11 @@
                 </div>
             </div>
 
+            % if launch:
+            <div id="instancesTable" class = "row" style="display:none">
+            % else:
             <div id="instancesTable" class = "row">
+            % end
                    <div class="col-lg-12">
                         <h1 class="page-header">Instance</h1>
                         <div class="panel panel-default">
@@ -183,7 +191,7 @@
 
                     <form id="lauchInstanceForm" >
                          <div class="span1 col-md-6">
-                            <div class="well">
+                            <div id="wellOnDemand" class="well">
                                 <h2 class="text-warning">On Demond</h2>
 
                                 <p><span class="label label-success">POPULAR</span></p>
@@ -200,7 +208,7 @@
                             </div>
                         </div>
                         <div class="span1 col-md-6">
-                            <div class="well">
+                            <div id="wellFlatRate" class="well">
                                 <h2 class="text-warning">Flat Rate</h2>
 
                                 <p><span class="label label-success">POPULAR</span></p>

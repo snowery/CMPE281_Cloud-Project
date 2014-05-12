@@ -6,10 +6,10 @@ $(function(){
     for(var i = 0; i < ratePlans.length; i++){
         ratePlan = ratePlans[i];
         if($(ratePlan).text() == "0"){
-            $(ratePlan).text("On-demond");
+            $(ratePlan).html("<span class='badge alert-success'>On Demond</span>");
         }
         if($(ratePlan).text() == "1"){
-            $(ratePlan).text("Flat-rate");
+            $(ratePlan).html("<span class='badge alert-success'>Flat Rate</span>");
         }
     }
     vmStatuses = $('.vmStatus');
@@ -33,10 +33,17 @@ $(function(){
     $('#onDemond').click(function(e){
         e.preventDefault();
         $('#plan').val('0');
+
+        $('#wellOnDemand').addClass('plan');
+        $('#wellFlatRate').removeClass('plan');
     });
+
     $('#flatRate').click(function(e){
         e.preventDefault();
         $('#plan').val('1');
+
+        $('#wellFlatRate').addClass('plan');
+        $('#wellOnDemand').removeClass('plan');
     });
     $('.select').click(function(){
          $('#vmName').val($(this).attr('vmName'));

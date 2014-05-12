@@ -44,7 +44,8 @@ def dashboard(uid):
 @get('/<uid:int>/instances')
 def instances(uid):
     instances = myController.get_instance_by_uid(uid)
-    return template("templates/instances", get_url=url, instances=instances)
+    launch = request.query.dict.has_key('launch')
+    return template("templates/instances", get_url=url, instances=instances, launch=launch)
 
 @get('/<uid:int>/billing')
 def billing(uid):
