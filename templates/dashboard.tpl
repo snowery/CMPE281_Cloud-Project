@@ -9,6 +9,7 @@
     <title>GenyCloud</title>
 
     % include('templates/csslinks.tpl', title='CSS Links')
+    <link href="{{ get_url('/static/<filename:path>', filename='css/overview.css')}}" rel="stylesheet" />
 
 </head>
 
@@ -27,41 +28,82 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Resource
-                            <div class="pull-right">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                        Actions
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right" role="menu">
-                                        <li><a href="#">Action</a>
-                                        </li>
-                                        <li><a href="#">Another action</a>
-                                        </li>
-                                        <li><a href="#">Something else here</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <i class="fa fa-dashboard fa-fw"></i> Resource
+
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <h3><a href="/1/instances">Instances
-                            </a></h3> <h4><span style="padding-left: 100px">Running <div class="badge alert-danger" style="font-size:x-large">{{running}}</div></span>
-                                <span style="padding-left: 20px">Total <div class="badge alert-success" style="font-size:x-large">{{total}}</div></span></h4><br/>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="hero-widget well well-sm">
+                                        <div class="icon">
+                                             <i class="glyphicon glyphicon-phone"></i>
+                                        </div>
+                                        <div class="text">
+                                            <var>{{running}} / {{total}}</var>
+                                            <label class="text-muted">Running Instances</label>
+                                        </div>
+                                        <button class="btn btn-primary btn-lg btn3d btn-block" id="launchInstance"><span class="glyphicon"></span>Launch Instance</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="hero-widget well well-sm">
+                                        <div class="icon">
+                                             <i class="glyphicon glyphicon-usd"></i>
+                                        </div>
+                                        <div class="text">
+                                            <var>{{balance['amount']}}</var>
+                                            <label class="text-muted">Current Balance</label>
+                                        </div>
+                                        <a class="btn btn-info btn-lg btn3d btn-block" id="showBilling" href="\1\billing"><span class="glyphicon"></span>Show Billing</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="hero-widget well well-sm">
+                                        <div class="icon">
+                                             <i class="glyphicon glyphicon-bell"></i>
+                                        </div>
+                                        <div class="text">
+                                            <var>0</var>
+                                            <label class="text-muted">System Alerts</label>
+                                        </div>
+                                        <button class="btn btn-success btn-lg btn3d btn-block" id="viewAlert"><span class="glyphicon"></span>View Alerts</button>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <button class="btn btn-info" id="launchInstance">Launch Instance</button>
                         </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            Notice
+                        </div>
+                        <div class="panel-body">
+                            <p>Any question please call 800-000-0000 or email service@genycloud.com</p>
+                            <div class="span1 col-md-12">
+                            <div class="well">
+                                <h4 class="text-warning">On Demond</h4>$0.25 / minute
+                                </div>
+                        </div>
+                        <div class="span1 col-md-12">
+                            <div class="well">
+                                <h4 class="text-warning">Flat Rate</h4>$250 / month
+                            </div>
+                        </div>
+                        </div>
+                        <div class="panel-footer">
+                            May 12, 2014
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-clock-o fa-fw"></i> Timeline
@@ -69,38 +111,39 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <ul class="timeline">
-                            % for log in logs:
-                                % if log['on']:
-                                    <li>
-                                        <div class="timeline-badge danger"><i class="fa fa-play"></i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Power on {{log['VmName']}}</h4>
-                                % else:
-                                    <li class="timeline-inverted">
-                                        <div class="timeline-badge success"><i class="fa fa-stop"></i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Power off {{log['VmName']}}</h4>
-                                % end
+                                % for event in events:
+
+                                    %if event['Event'] == 'Power On':
+                                        <li>
+                                        <div class="timeline-badge success"><i class="fa fa-rocket"></i></div>
+                                    %else:
+                                        <li class="timeline-inverted">
+                                        <div class="timeline-badge danger"><i class="fa fa-square"></i></div>
+                                    %end
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">{{event['VMName']}}</h4>
                                             <p>
-                                                <small class="text-muted"><i class="fa fa-time"></i> {{log['time']}} </small>
+                                                %if event['Event'] == 'Power On':
+                                                    <span class="badge alert-success">{{event['Event']}}</span>
+                                                %else:
+                                                    <span class="badge alert-danger">{{event['Event']}}</span>
+                                                %end
+                                                <small class="text-muted"><i class="fa fa-time"></i> {{event['Time']}} </small>
                                             </p>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Instance ID: {{log['VmId']}}</p>
+                                            <p>Instance ID: {{event['VMId']}}</p>
                                         </div>
                                     </div>
                                 </li>
-                            % end
+                                % end
                             </ul>
                         </div>
                         <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
                 </div>
+                    <!-- /.panel -->
                 <!-- /.col-lg-8 -->
             </div>
             <!-- /.row -->

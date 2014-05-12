@@ -17,8 +17,8 @@ session_opts = {
 app = SessionMiddleware(bottle.app(), session_opts)
 
 
-myController = controller.Controller("root", "root", "cmpe2811")
-billingDao = billing.Billing("root", "root", "cmpe2811")
+myController = controller.Controller("root", "root", "cmpe281")
+billingDao = billing.Billing("root", "root", "cmpe281")
 
 
 #REST URL Mapping
@@ -35,9 +35,11 @@ def dashboard(uid):
         if myController.get_instance_status(instance['VmId']) == 'running':
             running += 1
 
-    logs = myController.get_log_by_user(uid)
+    events = myController.get_log_by_user(uid)
 
-    return template("templates/dashboard", get_url=url, running=running, total=total, logs=logs)
+    balance = billingDao.get_active_bill_by_user(uid)
+
+    return template("templates/dashboard", get_url=url, running=running, total=total, balance=balance, events=events)
 
 @get('/<uid:int>/instances')
 def instances(uid):

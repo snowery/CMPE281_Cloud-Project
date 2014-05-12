@@ -169,18 +169,10 @@ class Controller:
         return "running" if self.c.fetchone()['VmStatus'] == 'A' else "powered off"
 
     def get_log_by_user(self, user_id):
-        self.c.execute("select * from logs where OrderId in (select OrderId from orders where UserId = %s and VmStatus <> 'T') order by LogId desc", user_id)
-        logs = []
-        for row in self.c.fetchall():
-            vm_id = row['VmId']
-            self.c.execute("select VmName from instance where VmId=%s", vm_id)
-            vm_name = self.c.fetchone()['VmName']
-            logs.append({'on': True, 'VmId': vm_id, 'VmName': vm_name, 'time': row['StartTime']})
-            if row['EndTime']:
-                logs.append({'on': False, 'VmId': vm_id, 'VmName': vm_name, 'time': row['EndTime']})
+        self.c.execute("select t.*, i.VMName from (select 'Power On' Event, VMId, StartTime Time from logs union select 'Power Off' Event, VMId, EndTime Time from logs) t inner join instance i on t.VMId = i.VMId where i.VMId in (select VMId from instance where ReservedBy = %s) order by t.Time desc", user_id)
+        events = self.c.fetchall()
 
-
-        return sorted(logs, key=lambda d: d['time'], reverse=True)
+        return events
 
     def sign_up(self, email, password):
         """

@@ -128,6 +128,9 @@ class Billing():
         self.c.execute("select @rn:= @rn+1 No, sum(Charge) Amount, Status!='A' IsPaid, PaidDate from billing , (SELECT @rn:=0 rn) as n where UserId = %s group by PaidDate order by rn desc", user_id)
         return self.c.fetchall()
 
+    def get_active_bill_by_user(self, user_id):
+        self.c.execute("select IFNULL(round(sum(Charge),2),0.00) amount from billing where Status = 'A' and UserId = %s", user_id)
+        return self.c.fetchone()
 
     def get_hourly_usage_by_user(self, user_id):
         """
