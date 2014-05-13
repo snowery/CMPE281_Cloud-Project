@@ -115,6 +115,7 @@
                     $.post(url, {'bill_ids':bill_ids.join()}, function(result){
                         if(result=='ok') {
                             $('#btnPayBill').hide();
+                             $('#btnPayBill').parent().prepend("<span class='alert-success'>Paid successfully, thank you!</span>");
                         } else {
                             alert('Payment Error!');
                         }

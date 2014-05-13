@@ -17,8 +17,8 @@ session_opts = {
 app = SessionMiddleware(bottle.app(), session_opts)
 
 
-myController = controller.Controller("root", "root", "cmpe281")
-billingDao = billing.Billing("root", "root", "cmpe281")
+myController = controller.Controller("root", "root", "cmpe2811")
+billingDao = billing.Billing("root", "root", "cmpe2811")
 
 
 #REST URL Mapping

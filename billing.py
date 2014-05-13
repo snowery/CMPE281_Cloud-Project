@@ -126,7 +126,9 @@ class Billing():
         return bills by user id
         """
         self.c.execute("select @rn:= @rn+1 No, sum(Charge) Amount, Status!='A' IsPaid, PaidDate from billing , (SELECT @rn:=0 rn) as n where UserId = %s group by PaidDate order by rn desc", user_id)
-        return self.c.fetchall()
+        result = self.c.fetchall()
+        self.db.commit()
+        return result
 
     def get_active_bill_by_user(self, user_id):
         self.c.execute("select IFNULL(round(sum(Charge),2),0.00) amount from billing where Status = 'A' and UserId = %s", user_id)
@@ -137,6 +139,7 @@ class Billing():
         return hourly usage by user id
         """
         self.c.execute("select DATE_FORMAT(EndTime,'%%Y-%%m-%%d %%h:00:00') Date, FORMAT(Uptime/60,0) Uptime from logs where VmId in (select VmId from instance where ReservedBy = %s)  group by Date", user_id)
+
         return self.c.fetchall()
 
     def get_hourly_cost_by_user(self, user_id):
