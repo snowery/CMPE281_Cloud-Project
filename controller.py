@@ -92,10 +92,12 @@ class Controller:
         now = datetime.datetime.now()
 
         status = h.get_instance_status(vm_name)
-        while status != "running":
+        i = 0
+        while status != "running" and i < 10:
             print "Check status:" + status
             print "Launch in process..."
             sleep(3)
+            i += 1
             status = h.get_instance_status(vm_name)
 
         if status == "running":
@@ -121,10 +123,12 @@ class Controller:
         now = datetime.datetime.now()
 
         status = h.get_instance_status(vm_name)
-        while status != "powered off":
+        i = 0
+        while status != "powered off" and i < 10:
             print "Check status:" + status
             print "Power off in process..."
             sleep(3)
+            i += 1
             status = h.get_instance_status(vm_name)
 
         if status == "powered off":
