@@ -175,7 +175,7 @@ class Controller:
         return "running" if self.c.fetchone()['VmStatus'] == 'A' else "powered off"
 
     def get_log_by_user(self, user_id):
-        self.c.execute("select t.*, i.VMName from (select 'Power On' Event, VMId, StartTime Time from logs union select 'Power Off' Event, VMId, EndTime Time from logs) t inner join instance i on t.VMId = i.VMId where i.VMId in (select VMId from instance where ReservedBy = %s) order by t.Time desc", user_id)
+        self.c.execute("select t.*, o.VMName from (select 'Power On' Event, OrderId, StartTime Time from logs union select 'Power Off' Event, OrderId, EndTime Time from logs) t inner join orders o on t.OrderId = o.OrderId where o.OrderId in (select OrderId from orders where UserId = %s) order by t.Time desc", user_id)
         events = self.c.fetchall()
 
         return events
